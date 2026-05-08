@@ -5,20 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Nil Vollhardt</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="header-container"></div>
+      <div class="header-container">
+        <img
+          src="assets/imgs/portfolio-logo-icon.png"
+          alt="Portfolio Logo Icon"
+          class="logo-icon"
+        />
+        <nav class="header-nav">
+          <div class="language-switcher">
+            <button class="active">EN</button>
+            <button>DE</button>
+          </div>
+          <button class="burger-menu">
+            <img src="assets/imgs/burger-menu-icon.svg" alt="burger menu" />
+          </button>
+        </nav>
+      </div>
     </header>
     <main>
       <div class="main-container">
-        <section class="hero-section"></section>
+        <section class="hero-section">
+          <h1>Frontend Developer</h1>
+          <div class="name-container">
+            <div class="divider"></div>
+            <p>Nil Vollhardt</p>
+          </div>
+          <div class="hero-bottom-container">
+            <a href="#contact-section">kontakt@nil-vollhardt.de</a>
+            <div class="scroll-down-indicator">
+              <img
+                src="assets/imgs/bottom-arrow-icon.svg"
+                alt="bottom scroll arrow"
+              />
+              <p>Scroll Down</p>
+            </div>
+          </div>
+        </section>
         <section class="about-me-section"></section>
         <section class="skills-section"></section>
         <section class="portfolio-section"></section>
         <section class="references-section"></section>
-        <section class="contact-section"></section>
+        <section id="contact-section" class="contact-section"></section>
       </div>
     </main>
     <footer>
