@@ -2,6 +2,7 @@
   --primary-color: rgb(255, 252, 243);
   --secondary-color: rgb(0, 188, 143);
   --font-family-syne: "Syne", sans-serif;
+  --font-family-syneExtraBold: "SyneExtraBold", sans-serif;
   --font-family-overpass: "Overpass", sans-serif;
 }
 
@@ -15,6 +16,21 @@ body {
   background-color: var(--primary-color);
   padding-left: 100px;
   padding-right: 100px;
+}
+
+h1 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 128px;
+  color: black;
+  text-align: center;
+  line-height: 97.5%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 
 header {
@@ -72,4 +88,85 @@ button {
   background: none;
   cursor: pointer;
   text-align: center;
+}
+
+.name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.name-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--secondary-color);
+}
+
+.divider {
+  border-bottom: 3px solid black;
+  width: 674px;
+}
+
+.hero-section {
+  margin-top: 112px;
+}
+
+.hero-bottom-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-bottom-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 300;
+  font-size: 22px;
+  color: black;
+}
+
+.hero-bottom-container a {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-orientation: mixed;
+  display: inline-block;
+  font-family: var(--font-family-overpass);
+  font-weight: 300;
+  font-size: 22px;
+  color: black;
+}
+
+.scroll-down-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-down-arrow {
+  width: 96px;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-down-arrow img {
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideDown 2s linear infinite;
+}
+
+@keyframes slideDown {
+  -0% {
+    top: -160px;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
 }
