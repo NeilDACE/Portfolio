@@ -27,6 +27,14 @@ h1 {
   line-height: 97.5%;
 }
 
+h2 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 78px;
+  color: black;
+  text-align: start;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -34,14 +42,18 @@ a {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-color);
 }
 
 .header-container {
   width: 100%;
-  height: 92px;
+  height: 10dvh;
   max-width: 1920px;
   display: flex;
   justify-content: space-between;
@@ -110,7 +122,8 @@ button {
 }
 
 .hero-section {
-  margin-top: 112px;
+  height: 90dvh;
+  padding-top: 112px;
 }
 
 .hero-bottom-container {
@@ -157,6 +170,74 @@ button {
   left: 50%;
   transform: translateX(-50%);
   animation: slideDown 2s linear infinite;
+}
+
+.about-me-section {
+  height: 90dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-me-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 48px;
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.about-me-content p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  color: black;
+}
+
+.about-me-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.lets-talk-button {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 23px;
+  padding: 20px 60px;
+  border: 4px solid rgba(0, 0, 0, 1);
+  transition: 0.1s ease-out;
+}
+
+.lets-talk-button:hover {
+  padding: 20px 80px;
+  font-weight: bold;
+}
+
+.profile-picture {
+  width: 533px;
+  height: 533px;
 }
 
 @keyframes slideDown {
