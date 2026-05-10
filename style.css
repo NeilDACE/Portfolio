@@ -35,6 +35,10 @@ h2 {
   text-align: start;
 }
 
+h2:hover {
+  color: var(--secondary-color);
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -238,6 +242,98 @@ button {
 .profile-picture {
   width: 533px;
   height: 533px;
+}
+
+.arrow-left-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 80px;
+}
+
+.arrow-right-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 80px;
+}
+
+.skills-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid rgba(0, 0, 0, 1);
+  padding: 120px 114px;
+  text-align: center;
+}
+
+.skills-section h2 {
+  position: absolute;
+  top: -60px;
+  background-color: var(--primary-color);
+  padding: 4px;
+}
+
+.skills-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 128px;
+}
+
+.skill-item {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-item img {
+  filter: grayscale(100%);
+}
+
+.skill-item p {
+  font-family: var(--font-family-overpass);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  color: black;
+}
+
+.ready-to-learn-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.ready-to-learn-container img {
+  height: 75px;
+  width: 100px;
+}
+
+.ready-to-learn-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  color: black;
+  padding-bottom: 8px;
+}
+
+.ready-to-learn-container a {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  color: var(--secondary-color);
 }
 
 @keyframes slideDown {
