@@ -339,19 +339,33 @@
               ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
             /></a>
           </div>
-          <section id="contact-section" class="contact-section">
-            <h2>Say Hi!</h2>
-            <div class="contact-container">
-              <h3>Want to discuss a new project?</h3>
-              <p>Say hello! let's discuss your ideas and make it happen</p>
-              <form action="#">
-                <input type="text" placeholder="Your Name" />
-                <input type="email" placeholder="Your Email" required />
-                <textarea
-                  placeholder="Your Message"
-                  rows="5"
-                  required
-                ></textarea>
+        </div>
+      </main>
+      <div class="contact-and-footer-container">
+        <section id="contact-section" class="contact-section">
+          <h2>Say Hi!</h2>
+          <div class="contact-container">
+            <p class="contact-headline">Want to discuss a new project?</p>
+            <p class="contact-animation">
+              Say hello! let's discuss your ideas and make it happen
+            </p>
+            <form action="#">
+              <div class="input-group">
+                <input type="text" placeholder=" " required />
+                <label for="name">Your Name</label>
+                <p class="error-message">Your Name is required</p>
+              </div>
+              <div class="input-group">
+                <input type="email" placeholder=" " required />
+                <label for="email">Your Email</label>
+                <p class="error-message">Your Email is required</p>
+              </div>
+              <div class="input-group">
+                <textarea placeholder=" " rows="5" required></textarea>
+                <label for="message">Your Message</label>
+                <p class="error-message">Your Message is required</p>
+              </div>
+              <div>
                 <div class="agree-container">
                   <button>
                     <img
@@ -360,21 +374,53 @@
                     />
                   </button>
                   <p>
-                    I've read the <a href="#">privacy policy</a>and agree to the
-                    processing of my data as outlined.
+                    I've read the <a href="#">privacy policy</a> and agree to
+                    the processing of my data as outlined.
                   </p>
                 </div>
-                <button type="submit" class="lets-talk-button">
+                <p class="error-message">Please accept the privacy policy.</p>
+              </div>
+              <div class="send-message-button-container">
+                <button type="submit" class="send-message-button">
                   Send Message
                 </button>
-              </form>
+              </div>
+            </form>
+          </div>
+        </section>
+        <footer>
+          <div class="footer-container">
+            <div class="footer-left-container">
+              <img
+                src="assets/imgs/portfolio-logo-icon.png"
+                alt="Portfolio Logo Icon"
+                class="logo-icon"
+              />
+              <p>&copy; Nil Vollhardt 2026</p>
             </div>
-          </section>
-        </div>
-      </main>
-      <footer>
-        <div class="footer-container"></div>
-      </footer>
+            <div class="footer-right-container">
+              <div class="social-media-container">
+                <a href="#"
+                  ><img
+                    src="assets/imgs/link-icons/github-icon.svg"
+                    alt="github icon"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="assets/imgs/link-icons/email-icon.svg"
+                    alt="email icon"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="assets/imgs/link-icons/linkedin-icon.svg"
+                    alt="linkedin icon"
+                /></a>
+              </div>
+              <a href="#">Legal notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
     </body>
   </html>
 </doctype>

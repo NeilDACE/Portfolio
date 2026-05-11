@@ -14,8 +14,6 @@
 
 body {
   background-color: var(--primary-color);
-  padding-left: 100px;
-  padding-right: 100px;
 }
 
 h1 {
@@ -60,6 +58,13 @@ header {
   justify-content: center;
   align-items: center;
   background-color: var(--primary-color);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+main {
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .header-container {
@@ -236,13 +241,13 @@ button {
   font-family: var(--font-family-overpass);
   font-weight: 400;
   font-size: 23px;
-  padding: 20px 60px;
+  padding: 16px 56px;
   border: 4px solid rgba(0, 0, 0, 1);
   transition: 0.1s ease-out;
 }
 
 .lets-talk-button:hover {
-  padding: 20px 80px;
+  padding: 16px 76px;
   font-weight: bold;
 }
 
@@ -464,12 +469,24 @@ button {
   gap: 8px;
 }
 
+.contact-and-footer-container {
+  background-color: black;
+  color: white;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.contact-section h2 {
+  color: white;
+}
+
 .contact-name {
   font-family: var(--font-family-syne);
   font-weight: 700;
   font-size: 22px;
   line-height: 120%;
-  color: black;
 }
 
 .relationship {
@@ -477,7 +494,6 @@ button {
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
-  color: black;
 }
 
 .reference-text {
@@ -485,8 +501,224 @@ button {
   font-weight: 400;
   font-size: 18px;
   line-height: 120%;
-  color: black;
   text-align: start;
+}
+
+.contact-headline {
+  font-family: var(--font-family-overpass);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--secondary-color);
+}
+
+.contact-animation {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px;
+  gap: 16px;
+}
+
+.contact-container form {
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  width: 100%;
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  border: none;
+  outline: none;
+  color: rgba(255, 252, 243, 1);
+  background-color: black;
+  padding: 15px 25px;
+  border-bottom: 2px solid rgba(255, 252, 243, 1);
+}
+
+input:hover {
+  outline: 4px solid rgba(255, 252, 243, 1);
+  outline-offset: -4px;
+}
+
+input:focus {
+  outline: 2px solid rgba(255, 252, 243, 1);
+  outline-offset: -2px;
+}
+
+input::placeholder {
+  color: rgba(255, 252, 243, 1);
+}
+
+textarea {
+  width: 100%;
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  border: none;
+  outline: none;
+  color: rgba(255, 252, 243, 1);
+  background-color: black;
+  padding: 15px 25px;
+  border-bottom: 2px solid rgba(255, 252, 243, 1);
+}
+
+textarea:hover {
+  outline: 4px solid rgba(255, 252, 243, 1);
+  outline-offset: -4px;
+}
+
+textarea:focus {
+  outline: 2px solid rgba(255, 252, 243, 1);
+  outline-offset: -2px;
+}
+
+textarea::placeholder {
+  color: rgba(255, 252, 243, 1);
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group label {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  color: rgba(255, 252, 243, 1);
+  background-color: black;
+  transition: 0.2s ease-out;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  left: 16px;
+  top: -9px;
+}
+
+.error-message {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  color: rgba(230, 28, 64, 1);
+  padding-top: 8px;
+  visibility: hidden;
+}
+
+.agree-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agree-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgba(255, 252, 243, 1);
+}
+
+.agree-container a {
+  color: var(--secondary-color);
+}
+
+.send-message-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.send-message-button {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 23px;
+  padding: 16px 56px;
+  gap: 10px;
+  border: 4px solid rgba(187, 187, 187, 1);
+  color: rgba(187, 187, 187, 1);
+  background-color: black;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  transition: 0.1s ease-out;
+  opacity: 0.5;
+}
+
+.send-message-button:hover {
+  padding: 16px 76px;
+  font-weight: bold;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.footer-left-container img {
+  filter: invert(100%);
+}
+
+.footer-left-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+}
+
+.footer-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.footer-right-container a {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: rgba(255, 252, 243, 1);
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
 }
 
 @keyframes slideDown {
