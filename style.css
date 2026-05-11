@@ -39,6 +39,13 @@ h2:hover {
   color: var(--secondary-color);
 }
 
+h3 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 45px;
+  color: rgba(0, 0, 0, 1);
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -334,6 +341,152 @@ button {
   font-size: 22px;
   line-height: 120%;
   color: var(--secondary-color);
+}
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-section p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  color: black;
+  text-align: center;
+}
+
+.project-container {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 87px;
+}
+
+.project-screenshot {
+  width: 620px;
+  height: 395px;
+}
+
+.project-item {
+  display: flex;
+  gap: 10px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.portfolio-section .project-number {
+  font-family: var(--font-family-syne);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  color: black;
+}
+
+.project-number-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.portfolio-section .project-skills {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 120%;
+  color: var(--secondary-color);
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.references-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  gap: 32px;
+}
+
+.references-section > p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  color: black;
+}
+
+.references-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.reference-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 4px rgba(0, 0, 0, 1);
+  padding: 24px 16px;
+  gap: 8px;
+  flex: 1;
+}
+
+.reference-item:hover {
+  border-color: var(--secondary-color);
+}
+
+.reference-item:hover img {
+  filter: invert(53%) sepia(87%) saturate(452%) hue-rotate(119deg)
+    brightness(95%) contrast(101%);
+}
+
+.reference-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-name {
+  font-family: var(--font-family-syne);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  color: black;
+}
+
+.relationship {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: black;
+}
+
+.reference-text {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: black;
+  text-align: start;
 }
 
 @keyframes slideDown {
