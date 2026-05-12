@@ -18,12 +18,16 @@
         />
         <nav class="header-nav">
           <div class="language-switcher">
-            <button class="active">EN</button>
-            <button>DE</button>
+            <button type="button" class="active">EN</button>
+            <button type="button">DE</button>
           </div>
-          <button class="burger-menu" id="menu-toggle">
-            <img src="assets/imgs/burger-menu-icon.svg" alt="burger menu" />
-          </button>
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="full-screen-menu"
+            class="burger-menu"
+            id="menu-toggle"
+          ></button>
         </nav>
       </div>
     </header>
@@ -381,17 +385,22 @@
             </p>
             <form action="#">
               <div class="input-group">
-                <input type="text" placeholder=" " required />
+                <input type="text" placeholder=" " id="name" required />
                 <label for="name">Your Name</label>
                 <p class="error-message">Your Name is required</p>
               </div>
               <div class="input-group">
-                <input type="email" placeholder=" " required />
+                <input type="email" placeholder=" " id="email" required />
                 <label for="email">Your Email</label>
                 <p class="error-message">Your Email is required</p>
               </div>
               <div class="input-group">
-                <textarea placeholder=" " rows="5" required></textarea>
+                <textarea
+                  placeholder=" "
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
                 <label for="message">Your Message</label>
                 <p class="error-message">Your Message is required</p>
               </div>

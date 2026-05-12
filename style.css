@@ -129,6 +129,22 @@ main {
   gap: 40px;
 }
 
+.burger-menu {
+  width: 40px;
+  height: 32px;
+  background-image: url("assets/imgs/burger-menu/burger-menu-frame-1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.burger-menu.is-active {
+  animation: burger-open 0.3s steps(1) forwards;
+}
+
+.burger-menu.is-closed {
+  animation: burger-open 0.3s steps(1) reverse forwards;
+}
+
 .language-switcher {
   display: flex;
   justify-content: center;
@@ -758,6 +774,24 @@ button {
   }
   100% {
     top: 100%;
+  }
+}
+
+@keyframes burger-open {
+  0% {
+    background-image: url("assets/imgs/burger-menu/burger-menu-frame-1.svg");
+  }
+  25% {
+    background-image: url("assets/imgs/burger-menu/burger-menu-frame-2.svg");
+  }
+  50% {
+    background-image: url("assets/imgs/burger-menu/burger-menu-frame-3.svg");
+  }
+  75% {
+    background-image: url("assets/imgs/burger-menu/burger-menu-frame-4.svg");
+  }
+  100% {
+    background-image: url("assets/imgs/burger-menu/burger-menu-frame-5.svg");
   }
 }
 
