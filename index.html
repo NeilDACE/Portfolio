@@ -1,347 +1,377 @@
 <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Portfolio - Nil Vollhardt</title>
-      <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="styles/fonts.css" />
-      <script src="script.js" defer></script>
-    </head>
-    <body>
-      <header>
-        <div class="header-container">
-          <img
-            src="assets/imgs/portfolio-logo-icon.png"
-            alt="Portfolio Logo Icon"
-            class="logo-icon"
-          />
-          <nav class="header-nav">
-            <div class="language-switcher">
-              <button class="active">EN</button>
-              <button>DE</button>
-            </div>
-            <button class="burger-menu">
-              <img src="assets/imgs/burger-menu-icon.svg" alt="burger menu" />
-            </button>
-          </nav>
-        </div>
-      </header>
-      <main>
-        <div class="main-container">
-          <section class="hero-section">
-            <h1>Frontend<br />Developer</h1>
-            <div class="name-container">
-              <div class="divider"></div>
-              <p>Nil Vollhardt</p>
-            </div>
-            <div class="hero-bottom-container">
-              <a href="#contact-section">kontakt@nil-vollhardt.de</a>
-              <div class="scroll-down-indicator">
-                <div class="scroll-down-arrow">
-                  <img
-                    src="assets/imgs/bottom-arrow-icon.svg"
-                    alt="bottom scroll arrow"
-                  />
-                </div>
-                <p>Scroll<br />Down</p>
-              </div>
-            </div>
-          </section>
-          <section class="about-me-section">
-            <h2>About me</h2>
-            <div class="about-me-container">
-              <div class="about-me-content">
-                <p>
-                  Write some information about yourself that is IT related. Why
-                  are you passionate about coding? Show a desire to learn new
-                  technologies. Add a brief description of your problem-solving
-                  approach. You can include some key traits like: analytical
-                  thinking, creativity, persistence, and collaboration.
-                </p>
-                <div class="about-me-info-container">
-                  <div class="info-content">
-                    <img
-                      src="assets/imgs/house-icon.svg"
-                      alt="location icon"
-                      class="info-icon"
-                    />
-                    <p>Based in Emmendingen, Germany</p>
-                  </div>
-                  <div class="info-content">
-                    <img
-                      src="assets/imgs/laptop-icon.svg"
-                      alt="laptop icon"
-                      class="info-icon"
-                    />
-                    <p>Open to work Remote</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="lets-talk-button">Let's talk</button>
-                </div>
-              </div>
-              <img
-                src="assets/imgs/portfolio-profil.JPG"
-                alt="Portfolio Profile Picture"
-                class="profile-picture"
-              />
-            </div>
-          </section>
-          <div class="arrow-left-container">
-            <a href="#skills-section"
-              ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
-            /></a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Nil Vollhardt</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <img
+          src="assets/imgs/portfolio-logo-icon.png"
+          alt="Portfolio Logo Icon"
+          class="logo-icon"
+        />
+        <nav class="header-nav">
+          <div class="language-switcher">
+            <button class="active">EN</button>
+            <button>DE</button>
           </div>
-          <section class="skills-section">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-              <div class="skill-item">
+          <button class="burger-menu" id="menu-toggle">
+            <img src="assets/imgs/burger-menu-icon.svg" alt="burger menu" />
+          </button>
+        </nav>
+      </div>
+    </header>
+    <nav id="full-screen-menu" class="menu-overlay">
+      <div class="menu-content">
+        <ul class="menu-links">
+          <li><a class="menu-link" href="#about-me-section">About me</a></li>
+          <li><a class="menu-link" href="#skills-section">My skills</a></li>
+          <li><a class="menu-link" href="#portfolio-section">Portfolio</a></li>
+        </ul>
+        <div class="menu-footer">
+          <div class="menu-footer-content">
+            <div class="menu-footer-left">
+              <h2>Say Hi!</h2>
+              <a href="#">kontakt@nil-vollhardt.de</a>
+            </div>
+            <div class="menu-social-icons">
+              <a href="https://github.com/NeilDACE"
+                ><img
+                  src="assets/imgs/link-icons/github-icon.svg"
+                  alt="github icon"
+              /></a>
+              <a href="mailto:kontakt@nil-vollhardt.de"
+                ><img
+                  src="assets/imgs/link-icons/email-icon.svg"
+                  alt="email icon"
+              /></a>
+              <a href="https://www.linkedin.com/in/nil-v-mechatronik-dev/"
+                ><img
+                  src="assets/imgs/link-icons/linkedin-icon.svg"
+                  alt="linkedin icon"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="main-container">
+        <section class="hero-section">
+          <h1>Frontend<br />Developer</h1>
+          <div class="name-container">
+            <div class="divider"></div>
+            <p>Nil Vollhardt</p>
+          </div>
+          <div class="hero-bottom-container">
+            <a href="#contact-section">kontakt@nil-vollhardt.de</a>
+            <div class="scroll-down-indicator">
+              <div class="scroll-down-arrow">
                 <img
-                  src="assets/imgs/skills/angular-icon.svg"
-                  alt="angular icon"
-                  class="skill-icon"
+                  src="assets/imgs/bottom-arrow-icon.svg"
+                  alt="bottom scroll arrow"
                 />
-                <p>Angular</p>
               </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/typescript-icon.svg"
-                  alt="typescript icon"
-                  class="skill-icon"
-                />
-                <p>TypeScript</p>
+              <p>Scroll<br />Down</p>
+            </div>
+          </div>
+        </section>
+        <section class="about-me-section" id="about-me-section">
+          <h2>About me</h2>
+          <div class="about-me-container">
+            <div class="about-me-content">
+              <p>
+                Write some information about yourself that is IT related. Why
+                are you passionate about coding? Show a desire to learn new
+                technologies. Add a brief description of your problem-solving
+                approach. You can include some key traits like: analytical
+                thinking, creativity, persistence, and collaboration.
+              </p>
+              <div class="about-me-info-container">
+                <div class="info-content">
+                  <img
+                    src="assets/imgs/house-icon.svg"
+                    alt="location icon"
+                    class="info-icon"
+                  />
+                  <p>Based in Emmendingen, Germany</p>
+                </div>
+                <div class="info-content">
+                  <img
+                    src="assets/imgs/laptop-icon.svg"
+                    alt="laptop icon"
+                    class="info-icon"
+                  />
+                  <p>Open to work Remote</p>
+                </div>
               </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/javascript-icon.svg"
-                  alt="javascript icon"
-                  class="skill-icon"
-                />
-                <p>JavaScript</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/html-icon.svg"
-                  alt="html icon"
-                  class="skill-icon"
-                />
-                <p>HTML</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/css-icon.svg"
-                  alt="css icon"
-                  class="skill-icon"
-                />
-                <p>CSS</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/supabase-icon.svg"
-                  alt="supabase icon"
-                  class="skill-icon"
-                />
-                <p>Supabase</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/git-icon.svg"
-                  alt="git icon"
-                  class="skill-icon"
-                />
-                <p>Git</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/scrum-icon.svg"
-                  alt="scrum icon"
-                  class="skill-icon"
-                />
-                <p>Scrum</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/api-icon.svg"
-                  alt="api icon"
-                  class="skill-icon"
-                />
-                <p>REST.API</p>
-              </div>
-              <div class="skill-item">
-                <img
-                  src="assets/imgs/skills/design-icon.svg"
-                  alt="design icon"
-                  class="skill-icon"
-                />
-                <p>Material Design</p>
+              <div class="button-container">
+                <button class="primary-btn">Let's talk</button>
               </div>
             </div>
-            <div class="ready-to-learn-container">
-              <img src="assets/imgs/learn-icon.svg" alt="learn icon" />
-              <p>
-                Don't see the skill you need?
-                <a href="#contact-section">Contact me</a> I'm always ready to
-                learn!
+            <img
+              src="assets/imgs/portfolio-profil.JPG"
+              alt="Portfolio Profile Picture"
+              class="profile-picture"
+            />
+          </div>
+        </section>
+        <div class="arrow-left-container">
+          <a href="#skills-section"
+            ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
+          /></a>
+        </div>
+        <section class="skills-section" id="skills-section">
+          <h2>My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/angular-icon.svg"
+                alt="angular icon"
+                class="skill-icon"
+              />
+              <p>Angular</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/typescript-icon.svg"
+                alt="typescript icon"
+                class="skill-icon"
+              />
+              <p>TypeScript</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/javascript-icon.svg"
+                alt="javascript icon"
+                class="skill-icon"
+              />
+              <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/html-icon.svg"
+                alt="html icon"
+                class="skill-icon"
+              />
+              <p>HTML</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/css-icon.svg"
+                alt="css icon"
+                class="skill-icon"
+              />
+              <p>CSS</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/supabase-icon.svg"
+                alt="supabase icon"
+                class="skill-icon"
+              />
+              <p>Supabase</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/git-icon.svg"
+                alt="git icon"
+                class="skill-icon"
+              />
+              <p>Git</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/scrum-icon.svg"
+                alt="scrum icon"
+                class="skill-icon"
+              />
+              <p>Scrum</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/api-icon.svg"
+                alt="api icon"
+                class="skill-icon"
+              />
+              <p>REST.API</p>
+            </div>
+            <div class="skill-item">
+              <img
+                src="assets/imgs/skills/design-icon.svg"
+                alt="design icon"
+                class="skill-icon"
+              />
+              <p>Material Design</p>
+            </div>
+          </div>
+          <div class="ready-to-learn-container">
+            <img src="assets/imgs/learn-icon.svg" alt="learn icon" />
+            <p>
+              Don't see the skill you need?
+              <a href="#contact-section">Contact me</a> I'm always ready to
+              learn!
+            </p>
+          </div>
+        </section>
+        <div class="arrow-right-container">
+          <a href="#skills-section"
+            ><img src="assets/imgs/right-arrow-icon.svg" alt="right arrow icon"
+          /></a>
+        </div>
+        <section class="portfolio-section" id="portfolio-section">
+          <h2>Portfolio</h2>
+          <p>
+            Explore a selection of my work here - Interact with <br />
+            projects to see my skills in action.
+          </p>
+          <div class="project-container">
+            <div class="project-item">
+              <img
+                src="assets/imgs/projects/el-pollo-loco.png"
+                alt="El Pollo Loco Screenshot"
+                class="project-screenshot"
+              />
+              <div class="project-info">
+                <div class="project-number-container">
+                  <p class="project-number">01/04</p>
+                </div>
+                <h3>El Pollo Loco</h3>
+                <p class="project-skills">JavaScript| HTML | CSS</p>
+                <p>
+                  A simple Jump and Run Game based on an object-oriented
+                  approach. Help Pepe to find coins and salsa bottles to fight
+                  against the evils chickens in his dream.
+                </p>
+                <button class="primary-btn">Github</button>
+              </div>
+            </div>
+            <div class="project-item flex-row-reverse">
+              <img
+                src="assets/imgs/projects/join.png"
+                alt="Join Project Screenshot"
+                class="project-screenshot"
+              />
+              <div class="project-info">
+                <div class="project-number-container justify-content-start">
+                  <p class="project-number">02/04</p>
+                </div>
+                <h3>Join</h3>
+                <p class="project-skills">JavaScript | HTML | CSS | Firebase</p>
+                <p>
+                  Task manager inspired by the Kanban method. Create and
+                  organize tasks using drag and drop functions, assign users and
+                  categories.
+                </p>
+                <button class="primary-btn">Github</button>
+              </div>
+            </div>
+            <div class="project-item">
+              <img
+                src="assets/imgs/projects/pokedex.png"
+                alt="Pokedex Project Screenshot"
+                class="project-screenshot"
+              />
+              <div class="project-info">
+                <div class="project-number-container">
+                  <p class="project-number">03/04</p>
+                </div>
+                <h3>Pokedex</h3>
+                <p class="project-skills">JavaScript | HTML | CSS | API</p>
+                <p>
+                  Based on the PokeAPI a simple library that provides and
+                  catalogues pokemon information.
+                </p>
+                <button class="primary-btn">Github</button>
+              </div>
+            </div>
+            <div class="project-item flex-row-reverse">
+              <img
+                src="assets/imgs/projects/hydro-control-system.png"
+                alt="Hydro Control System Project Screenshot"
+                class="project-screenshot"
+              />
+              <div class="project-info">
+                <div class="project-number-container justify-content-start">
+                  <p class="project-number">04/04</p>
+                </div>
+                <h3>H-C-System</h3>
+                <p class="project-skills">
+                  JavaScript | Firebase | IoT Automation & Control
+                </p>
+                <p>
+                  Hydro-Control-System is an IoT irrigation solution using a
+                  Raspberry Pi to send soil data to Firebase via LTE and
+                  Tailscale VPN. Its weatherproof sensors enable secure, global
+                  garden monitoring.
+                </p>
+                <button class="primary-btn">Github</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="references-section">
+          <h2>References</h2>
+          <p>
+            I thrive both independently and as part of a team. Here's<br />
+            what my colleagues have to say about working with me.
+          </p>
+          <div class="references-container">
+            <div class="reference-item">
+              <div class="reference-contact">
+                <img src="assets/imgs/format_quote.svg" alt="quote icon" />
+                <p class="contact-name">V.Schuster</p>
+                <p class="relationship">Team Partner</p>
+              </div>
+              <p class="reference-text">
+                Michael really kept the team together with his great
+                organization and clear communication. We wouldn't have got this
+                far without his commitment.
               </p>
             </div>
-          </section>
-          <div class="arrow-right-container">
-            <a href="#skills-section"
-              ><img
-                src="assets/imgs/right-arrow-icon.svg"
-                alt="right arrow icon"
-            /></a>
-          </div>
-          <section class="portfolio-section">
-            <h2>Portfolio</h2>
-            <p>
-              Explore a selection of my work here - Interact with <br />
-              projects to see my skills in action.
-            </p>
-            <div class="project-container">
-              <div class="project-item">
-                <img
-                  src="assets/imgs/projects/el-pollo-loco.png"
-                  alt="El Pollo Loco Screenshot"
-                  class="project-screenshot"
-                />
-                <div class="project-info">
-                  <div class="project-number-container">
-                    <p class="project-number">01/04</p>
-                  </div>
-                  <h3>El Pollo Loco</h3>
-                  <p class="project-skills">JavaScript| HTML | CSS</p>
-                  <p>
-                    A simple Jump and Run Game based on an object-oriented
-                    approach. Help Pepe to find coins and salsa bottles to fight
-                    against the evils chickens in his dream.
-                  </p>
-                  <button class="lets-talk-button">Github</button>
-                </div>
+            <div class="reference-item">
+              <div class="reference-contact">
+                <img src="assets/imgs/format_quote.svg" alt="quote icon" />
+                <p class="contact-name">E.Eichinger</p>
+                <p class="relationship">Team Partner</p>
               </div>
-              <div class="project-item flex-row-reverse">
-                <img
-                  src="assets/imgs/projects/join.png"
-                  alt="Join Project Screenshot"
-                  class="project-screenshot"
-                />
-                <div class="project-info">
-                  <div class="project-number-container justify-content-start">
-                    <p class="project-number">02/04</p>
-                  </div>
-                  <h3>Join</h3>
-                  <p class="project-skills">
-                    JavaScript | HTML | CSS | Firebase
-                  </p>
-                  <p>
-                    Task manager inspired by the Kanban method. Create and
-                    organize tasks using drag and drop functions, assign users
-                    and categories.
-                  </p>
-                  <button class="lets-talk-button">Github</button>
-                </div>
-              </div>
-              <div class="project-item">
-                <img
-                  src="assets/imgs/projects/pokedex.png"
-                  alt="Pokedex Project Screenshot"
-                  class="project-screenshot"
-                />
-                <div class="project-info">
-                  <div class="project-number-container">
-                    <p class="project-number">03/04</p>
-                  </div>
-                  <h3>Pokedex</h3>
-                  <p class="project-skills">JavaScript | HTML | CSS | API</p>
-                  <p>
-                    Based on the PokeAPI a simple library that provides and
-                    catalogues pokemon information.
-                  </p>
-                  <button class="lets-talk-button">Github</button>
-                </div>
-              </div>
-              <div class="project-item flex-row-reverse">
-                <img
-                  src="assets/imgs/projects/hydro-control-system.png"
-                  alt="Hydro Control System Project Screenshot"
-                  class="project-screenshot"
-                />
-                <div class="project-info">
-                  <div class="project-number-container justify-content-start">
-                    <p class="project-number">04/04</p>
-                  </div>
-                  <h3>H-C-System</h3>
-                  <p class="project-skills">
-                    JavaScript | Firebase | IoT Automation & Control
-                  </p>
-                  <p>
-                    Hydro-Control-System is an IoT irrigation solution using a
-                    Raspberry Pi to send soil data to Firebase via LTE and
-                    Tailscale VPN. Its weatherproof sensors enable secure,
-                    global garden monitoring.
-                  </p>
-                  <button class="lets-talk-button">Github</button>
-                </div>
-              </div>
+              <p class="reference-text">
+                Michi was a top team colleague at DA. His positive commitment
+                and willingness to take on responsibility made a significant
+                contribution to us achieving our goals.
+              </p>
             </div>
-          </section>
-          <section class="references-section">
-            <h2>References</h2>
-            <p>
-              I thrive both independently and as part of a team. Here's<br />
-              what my colleagues have to say about working with me.
-            </p>
-            <div class="references-container">
-              <div class="reference-item">
-                <div class="reference-contact">
-                  <img src="assets/imgs/format_quote.svg" alt="quote icon" />
-                  <p class="contact-name">V.Schuster</p>
-                  <p class="relationship">Team Partner</p>
-                </div>
-                <p class="reference-text">
-                  Michael really kept the team together with his great
-                  organization and clear communication. We wouldn't have got
-                  this far without his commitment.
-                </p>
+            <div class="reference-item">
+              <div class="reference-contact">
+                <img src="assets/imgs/format_quote.svg" alt="quote icon" />
+                <p class="contact-name">I.Nuber</p>
+                <p class="relationship">Frontend Engineer</p>
               </div>
-              <div class="reference-item">
-                <div class="reference-contact">
-                  <img src="assets/imgs/format_quote.svg" alt="quote icon" />
-                  <p class="contact-name">E.Eichinger</p>
-                  <p class="relationship">Team Partner</p>
-                </div>
-                <p class="reference-text">
-                  Michi was a top team colleague at DA. His positive commitment
-                  and willingness to take on responsibility made a significant
-                  contribution to us achieving our goals.
-                </p>
-              </div>
-              <div class="reference-item">
-                <div class="reference-contact">
-                  <img src="assets/imgs/format_quote.svg" alt="quote icon" />
-                  <p class="contact-name">I.Nuber</p>
-                  <p class="relationship">Frontend Engineer</p>
-                </div>
-                <p class="reference-text">
-                  It was a great pleasure to work with Michael. He knows how to
-                  push and encourage team members to present the best work
-                  possible, always adding something to brainstorm. Regarding the
-                  well-being of group members, he was always present and
-                  available to listen and help others, with a great sense of
-                  humor as well.
-                </p>
-              </div>
+              <p class="reference-text">
+                It was a great pleasure to work with Michael. He knows how to
+                push and encourage team members to present the best work
+                possible, always adding something to brainstorm. Regarding the
+                well-being of group members, he was always present and available
+                to listen and help others, with a great sense of humor as well.
+              </p>
             </div>
-          </section>
-          <div class="arrow-left-container">
-            <a href="#skills-section"
-              ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
-            /></a>
           </div>
+        </section>
+        <div class="arrow-left-container">
+          <a href="#skills-section"
+            ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
+          /></a>
         </div>
-      </main>
-      <div class="contact-and-footer-container">
+      </div>
+    </main>
+    <div class="contact-and-footer-container">
+      <div class="contact-and-footer-content">
         <section id="contact-section" class="contact-section">
           <h2>Say Hi!</h2>
           <div class="contact-container">
@@ -381,7 +411,7 @@
                 <p class="error-message">Please accept the privacy policy.</p>
               </div>
               <div class="send-message-button-container">
-                <button type="submit" class="send-message-button">
+                <button type="submit" class="primary-btn send-message-button">
                   Send Message
                 </button>
               </div>
@@ -421,6 +451,6 @@
           </div>
         </footer>
       </div>
-    </body>
-  </html>
-</doctype>
+    </div>
+  </body>
+</html>

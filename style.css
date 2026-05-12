@@ -1,17 +1,35 @@
+/* =========================
+  Theme Variables
+  ========================= */
+/* #region Theme Variables */
 :root {
   --primary-color: rgb(255, 252, 243);
   --secondary-color: rgb(0, 188, 143);
+  --tertiary-color: rgb(187, 187, 187);
+  --quaternary-color: rgb(230, 28, 64);
   --font-family-syne: "Syne", sans-serif;
   --font-family-syneExtraBold: "SyneExtraBold", sans-serif;
   --font-family-overpass: "Overpass", sans-serif;
 }
+/* #endregion Theme Variables */
 
+/* =========================
+  Base Reset
+  ========================= */
+/* #region Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
+/* #endregion Base Reset */
 
+/* =========================
+  Global Elements
+  ========================= */
+/* #region Global Elements */
 body {
   background-color: var(--primary-color);
 }
@@ -63,17 +81,45 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-left: 100px;
   padding-right: 100px;
+}
+/* #endregion Global Elements */
+
+/* =========================
+  Reusable Components
+  ========================= */
+/* #region Reusable Components */
+.primary-btn {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 23px;
+  padding: 16px 56px;
+  border: 4px solid black;
+  transition: 0.1s ease-out;
+}
+
+.primary-btn:hover {
+  padding: 16px 76px;
+  font-weight: bold;
 }
 
 .header-container {
   width: 100%;
-  height: 10dvh;
   max-width: 1920px;
+  height: 92px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1920px;
 }
 
 .header-nav {
@@ -237,42 +283,38 @@ button {
   gap: 16px;
 }
 
-.lets-talk-button {
-  font-family: var(--font-family-overpass);
-  font-weight: 400;
-  font-size: 23px;
-  padding: 16px 56px;
-  border: 4px solid rgba(0, 0, 0, 1);
-  transition: 0.1s ease-out;
-}
-
-.lets-talk-button:hover {
-  padding: 16px 76px;
-  font-weight: bold;
-}
-
 .profile-picture {
   width: 533px;
   height: 533px;
 }
+/* #endregion Reusable Components */
 
-.arrow-left-container {
+/* =========================
+  Decorative Arrows
+  ========================= */
+/* #region Decorative Arrows */
+.arrow-left-container,
+.arrow-right-container {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   width: 100%;
   margin-top: 24px;
   margin-bottom: 80px;
+}
+
+.arrow-left-container {
+  justify-content: flex-end;
 }
 
 .arrow-right-container {
-  display: flex;
   justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  margin-top: 24px;
-  margin-bottom: 80px;
 }
+/* #endregion Decorative Arrows */
+
+/* =========================
+  Main Sections
+  ========================= */
+/* #region Main Sections */
 
 .skills-section {
   position: relative;
@@ -280,9 +322,10 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 4px solid rgba(0, 0, 0, 1);
+  border: 4px solid black;
   padding: 120px 114px;
   text-align: center;
+  scroll-margin-top: 100px;
 }
 
 .skills-section h2 {
@@ -331,20 +374,20 @@ button {
   width: 100px;
 }
 
-.ready-to-learn-container p {
-  font-family: var(--font-family-overpass);
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 120%;
-  color: black;
-  padding-bottom: 8px;
-}
-
+.ready-to-learn-container p,
 .ready-to-learn-container a {
   font-family: var(--font-family-overpass);
   font-weight: 400;
   font-size: 22px;
   line-height: 120%;
+}
+
+.ready-to-learn-container p {
+  color: black;
+  padding-bottom: 8px;
+}
+
+.ready-to-learn-container a {
   color: var(--secondary-color);
 }
 
@@ -353,6 +396,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  scroll-margin-top: 100px;
 }
 
 .portfolio-section p {
@@ -447,7 +491,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 4px rgba(0, 0, 0, 1);
+  border: solid 4px black;
   padding: 24px 16px;
   gap: 8px;
   flex: 1;
@@ -470,12 +514,20 @@ button {
 }
 
 .contact-and-footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
   color: white;
   clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
   padding-top: 100px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.contact-and-footer-content {
+  width: 100%;
+  max-width: 1920px;
 }
 
 .contact-section h2 {
@@ -533,8 +585,13 @@ button {
   flex-direction: column;
   gap: 20px;
 }
+/* #endregion Main Sections */
 
-input {
+/* =========================
+  Form Fields
+  ========================= */
+/* #region Form Fields */
+:is(input, textarea) {
   width: 100%;
   font-family: var(--font-family-overpass);
   font-weight: 400;
@@ -542,52 +599,24 @@ input {
   line-height: 120%;
   border: none;
   outline: none;
-  color: rgba(255, 252, 243, 1);
+  color: var(--primary-color);
   background-color: black;
   padding: 15px 25px;
-  border-bottom: 2px solid rgba(255, 252, 243, 1);
+  border-bottom: 2px solid var(--primary-color);
 }
 
-input:hover {
-  outline: 4px solid rgba(255, 252, 243, 1);
+:is(input, textarea):hover {
+  outline: 4px solid var(--primary-color);
   outline-offset: -4px;
 }
 
-input:focus {
-  outline: 2px solid rgba(255, 252, 243, 1);
+:is(input, textarea):focus {
+  outline: 2px solid var(--primary-color);
   outline-offset: -2px;
 }
 
-input::placeholder {
-  color: rgba(255, 252, 243, 1);
-}
-
-textarea {
-  width: 100%;
-  font-family: var(--font-family-overpass);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-  border: none;
-  outline: none;
-  color: rgba(255, 252, 243, 1);
-  background-color: black;
-  padding: 15px 25px;
-  border-bottom: 2px solid rgba(255, 252, 243, 1);
-}
-
-textarea:hover {
-  outline: 4px solid rgba(255, 252, 243, 1);
-  outline-offset: -4px;
-}
-
-textarea:focus {
-  outline: 2px solid rgba(255, 252, 243, 1);
-  outline-offset: -2px;
-}
-
-textarea::placeholder {
-  color: rgba(255, 252, 243, 1);
+:is(input, textarea)::placeholder {
+  color: var(--primary-color);
 }
 
 .input-group {
@@ -602,7 +631,7 @@ textarea::placeholder {
   position: absolute;
   left: 25px;
   top: 10px;
-  color: rgba(255, 252, 243, 1);
+  color: var(--primary-color);
   background-color: black;
   transition: 0.2s ease-out;
   pointer-events: none;
@@ -621,7 +650,7 @@ textarea::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 120%;
-  color: rgba(230, 28, 64, 1);
+  color: var(--quaternary-color);
   padding-top: 8px;
   visibility: hidden;
 }
@@ -637,7 +666,7 @@ textarea::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
-  color: rgba(255, 252, 243, 1);
+  color: var(--primary-color);
 }
 
 .agree-container a {
@@ -653,24 +682,18 @@ textarea::placeholder {
 }
 
 .send-message-button {
-  font-family: var(--font-family-overpass);
-  font-weight: 400;
-  font-size: 23px;
-  padding: 16px 56px;
-  gap: 10px;
-  border: 4px solid rgba(187, 187, 187, 1);
-  color: rgba(187, 187, 187, 1);
+  border: 4px solid var(--tertiary-color);
+  color: var(--tertiary-color);
   background-color: black;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
-  transition: 0.1s ease-out;
   opacity: 0.5;
 }
+/* #endregion Form Fields */
 
-.send-message-button:hover {
-  padding: 16px 76px;
-  font-weight: bold;
-}
-
+/* =========================
+  Footer
+  ========================= */
+/* #region Footer */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -711,7 +734,7 @@ textarea::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
-  color: rgba(255, 252, 243, 1);
+  color: var(--primary-color);
 }
 
 .social-media-container {
@@ -720,9 +743,14 @@ textarea::placeholder {
   align-items: center;
   gap: 42px;
 }
+/* #endregion Footer */
 
+/* =========================
+  Animations
+  ========================= */
+/* #region Animations */
 @keyframes slideDown {
-  -0% {
+  0% {
     top: -160px;
   }
   50% {
@@ -731,4 +759,132 @@ textarea::placeholder {
   100% {
     top: 100%;
   }
+}
+
+@keyframes border-flow {
+  0% {
+    clip-path: inset(74% 94% 0% 0%);
+  } /* Ecke links */
+  50% {
+    clip-path: inset(98% 0% 0% 0%);
+  } /* Ganze Linie */
+  100% {
+    clip-path: inset(97.8% 0% 0% 56%);
+  } /* Teil rechts */
+}
+
+/* #endregion Animations */
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: var(--primary-color);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-overlay.is-open {
+  transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-links {
+  margin-top: 93px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.menu-link {
+  width: 580px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: var(--font-family-syne);
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 97.5%;
+  color: black;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid black;
+  clip-path: inset(74% 94% 0% 0%);
+  transition: clip-path 0.6s ease-in-out;
+}
+
+.menu-link:hover::after {
+  animation: border-flow 0.3s forwards;
+}
+
+.menu-link:active::after {
+  animation: none;
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.menu-footer h2 {
+  color: var(--primary-color);
+}
+
+.menu-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 100px 64px;
+  background: black;
+  color: white;
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+}
+
+.menu-footer-content {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.menu-footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.menu-footer-left a {
+  font-family: var(--font-family-overpass);
+  font-weight: 300;
+  font-size: 23px;
+  color: var(--primary-color);
+}
+
+.menu-social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 42px;
 }
