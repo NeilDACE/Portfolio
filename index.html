@@ -11,15 +11,17 @@
   <body>
     <header>
       <div class="header-container">
-        <img
-          src="assets/imgs/portfolio-logo-icon.png"
-          alt="Portfolio Logo Icon"
-          class="logo-icon"
-        />
+        <a href="#hero-section" class="logo-link">
+          <img
+            src="assets/imgs/portfolio-logo-icon.png"
+            alt="Portfolio Logo Icon"
+            class="logo-icon"
+          />
+        </a>
         <nav class="header-nav">
           <div class="language-switcher">
-            <button type="button" class="active">EN</button>
-            <button type="button">DE</button>
+            <button id="english-button" type="button" class="active">EN</button>
+            <button id="german-button" type="button">DE</button>
           </div>
           <button
             type="button"
@@ -40,11 +42,11 @@
         </ul>
         <div class="menu-footer">
           <div class="menu-footer-content">
-            <div class="menu-footer-left">
+            <a href="#contact-section" class="menu-footer-left">
               <h2>Say Hi!</h2>
-              <a href="#">kontakt@nil-vollhardt.de</a>
-            </div>
-            <div class="menu-social-icons">
+              <p>kontakt@nil-vollhardt.de</p>
+            </a>
+            <div class="social-media-container">
               <a href="https://github.com/NeilDACE"
                 ><img
                   src="assets/imgs/link-icons/github-icon.svg"
@@ -67,7 +69,7 @@
     </nav>
     <main>
       <div class="main-container">
-        <section class="hero-section">
+        <section class="hero-section" id="hero-section">
           <h1>Frontend<br />Developer</h1>
           <div class="name-container">
             <div class="divider"></div>
@@ -91,11 +93,12 @@
           <div class="about-me-container">
             <div class="about-me-content">
               <p>
-                Write some information about yourself that is IT related. Why
-                are you passionate about coding? Show a desire to learn new
-                technologies. Add a brief description of your problem-solving
-                approach. You can include some key traits like: analytical
-                thinking, creativity, persistence, and collaboration.
+                To me, coding is a craft: creating worlds and never-ending
+                learning. My analytical thinking helps me grasp complex systems
+                fast. My motto "Nothing is impossible" fuels my persistence. I
+                love exploring new tech and use my creativity and teamwork to
+                achieve maximum results through collaboration. It is all about
+                building together.
               </p>
               <div class="about-me-info-container">
                 <div class="info-content">
@@ -116,7 +119,7 @@
                 </div>
               </div>
               <div class="button-container">
-                <button class="primary-btn">Let's talk</button>
+                <a class="primary-btn" href="#contact-section">Let's talk</a>
               </div>
             </div>
             <img
@@ -126,11 +129,11 @@
             />
           </div>
         </section>
-        <div class="arrow-left-container">
-          <a href="#skills-section"
-            ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
-          /></a>
-        </div>
+        <a class="arrow-left-link" href="#skills-section">
+          <div class="arrow-left">
+            <img src="assets/imgs/arrow-left/arrow-left-frame-1.svg" alt="" />
+          </div>
+        </a>
         <section class="skills-section" id="skills-section">
           <h2>My Skills</h2>
           <div class="skills-grid">
@@ -176,11 +179,11 @@
             </div>
             <div class="skill-item">
               <img
-                src="assets/imgs/skills/supabase-icon.svg"
-                alt="supabase icon"
+                src="assets/imgs/skills/firebase-icon.svg"
+                alt="firebase icon"
                 class="skill-icon"
               />
-              <p>Supabase</p>
+              <p>Firebase</p>
             </div>
             <div class="skill-item">
               <img
@@ -208,15 +211,17 @@
             </div>
             <div class="skill-item">
               <img
-                src="assets/imgs/skills/design-icon.svg"
-                alt="design icon"
+                src="assets/imgs/skills/react-icon.svg"
+                alt="react icon"
                 class="skill-icon"
               />
-              <p>Material Design</p>
+              <p>React</p>
             </div>
           </div>
           <div class="ready-to-learn-container">
-            <img src="assets/imgs/learn-icon.svg" alt="learn icon" />
+            <div class="learn-icon-container">
+              <img src="assets/imgs/learn-icon.svg" alt="learn icon" />
+            </div>
             <p>
               Don't see the skill you need?
               <a href="#contact-section">Contact me</a> I'm always ready to
@@ -224,11 +229,14 @@
             </p>
           </div>
         </section>
-        <div class="arrow-right-container">
-          <a href="#skills-section"
-            ><img src="assets/imgs/right-arrow-icon.svg" alt="right arrow icon"
-          /></a>
-        </div>
+        <a class="arrow-right-link" href="#portfolio-section">
+          <div class="arrow-right">
+            <img
+              src="assets/imgs/right-arrow-icon.svg"
+              alt="right arrow icon"
+            />
+          </div>
+        </a>
         <section class="portfolio-section" id="portfolio-section">
           <h2>Portfolio</h2>
           <p>
@@ -367,11 +375,11 @@
             </div>
           </div>
         </section>
-        <div class="arrow-left-container">
-          <a href="#skills-section"
-            ><img src="assets/imgs/left-arrow-icon.svg" alt="left arrow icon"
-          /></a>
-        </div>
+        <a class="arrow-left-link" href="#contact-section">
+          <div class="arrow-left">
+            <img src="assets/imgs/arrow-left/arrow-left-frame-1.svg" alt="" />
+          </div>
+        </a>
       </div>
     </main>
     <div class="contact-and-footer-container">

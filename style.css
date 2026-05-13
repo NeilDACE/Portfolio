@@ -110,7 +110,7 @@ main {
 
 .header-container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
   height: 92px;
   display: flex;
   justify-content: space-between;
@@ -119,7 +119,7 @@ main {
 
 .main-container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
 }
 
 .header-nav {
@@ -153,12 +153,40 @@ main {
 }
 
 .language-switcher button {
+  position: relative;
   width: 40px;
   height: 28px;
   font-family: var(--font-family-syne);
   font-weight: 700;
   font-size: 16px;
   padding: 4px 6px;
+}
+
+.language-switcher button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid black;
+  clip-path: inset(100% 100% 100% 100%);
+  transition: clip-path 0.1s ease-in-out;
+}
+
+.language-switcher button:hover::after {
+  clip-path: inset(92.8% 21% 0% 36%);
+}
+
+.language-switcher button.active::after {
+  clip-path: inset(100% 100% 100% 100%);
+}
+
+.active:hover::after {
+  transition: none;
+  clip-path: inset(100% 100% 100% 100%);
+}
+
+.language-switcher button:active::after {
+  transition: none;
+  clip-path: inset(0% 0% 0% 0%);
 }
 
 .active {
@@ -205,6 +233,7 @@ button {
 }
 
 .hero-bottom-container {
+  padding-top: 80px;
   display: flex;
   justify-content: space-between;
 }
@@ -268,6 +297,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  padding-right: 64px;
 }
 
 .about-me-content p {
@@ -309,22 +339,41 @@ button {
   Decorative Arrows
   ========================= */
 /* #region Decorative Arrows */
-.arrow-left-container,
-.arrow-right-container {
+.arrow-left-link,
+.arrow-right-link {
   display: flex;
   align-items: center;
   width: 100%;
   margin-top: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
-.arrow-left-container {
+.arrow-left-link {
   justify-content: flex-end;
 }
 
-.arrow-right-container {
+.arrow-left-link img {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.arrow-right-link {
   justify-content: flex-start;
 }
+
+.arrow-right-link img {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.arrow-left-link.arrow-left-has-hovered .arrow-left img {
+  transform: translateX(-48px) translateY(48px);
+}
+
+.arrow-right-link.arrow-right-has-hovered .arrow-right img {
+  transform: translateX(48px) translateY(48px);
+}
+
 /* #endregion Decorative Arrows */
 
 /* =========================
@@ -364,10 +413,16 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  overflow: hidden;
+}
+
+.skill-item:hover img {
+  transform: translateX(2px);
+  animation: shake-tilt 0.2s ease;
 }
 
 .skill-item img {
-  filter: grayscale(100%);
+  transition: transform 0.2s ease 0.8s;
 }
 
 .skill-item p {
@@ -376,6 +431,12 @@ button {
   font-size: 16px;
   line-height: 120%;
   color: black;
+  transition: color 0.1s ease 0.8s;
+}
+
+.skill-item:hover p {
+  color: var(--secondary-color);
+  transition: color 0.1s ease 0s;
 }
 
 .ready-to-learn-container {
@@ -383,11 +444,22 @@ button {
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
+  padding-top: 48px;
 }
 
-.ready-to-learn-container img {
+.learn-icon-container {
+  overflow: hidden;
+}
+
+.learn-icon-container img {
   height: 75px;
   width: 100px;
+  transition: transform 0.2s ease 0.8s;
+}
+
+.learn-icon-container:hover img {
+  animation: shake-tilt 0.2s ease;
+  transform: translateX(2px);
 }
 
 .ready-to-learn-container p,
@@ -543,7 +615,7 @@ button {
 
 .contact-and-footer-content {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
 }
 
 .contact-section h2 {
@@ -753,12 +825,6 @@ button {
   color: var(--primary-color);
 }
 
-.social-media-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 42px;
-}
 /* #endregion Footer */
 
 /* =========================
@@ -798,13 +864,31 @@ button {
 @keyframes border-flow {
   0% {
     clip-path: inset(74% 94% 0% 0%);
-  } /* Ecke links */
+  }
   50% {
     clip-path: inset(98% 0% 0% 0%);
-  } /* Ganze Linie */
+  }
   100% {
     clip-path: inset(97.8% 0% 0% 56%);
-  } /* Teil rechts */
+  }
+}
+
+@keyframes shake-tilt {
+  0% {
+    transform: translateX(47px);
+  }
+  25% {
+    transform: translateX(73px) translateY(10px);
+  }
+  50% {
+    transform: translateX(-28px) translateY(10px);
+  }
+  75% {
+    transform: translateX(-47px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 /* #endregion Animations */
@@ -895,7 +979,7 @@ button {
 
 .menu-footer-content {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -909,16 +993,32 @@ button {
   gap: 16px;
 }
 
-.menu-footer-left a {
+.menu-footer-left p {
   font-family: var(--font-family-overpass);
   font-weight: 300;
   font-size: 23px;
   color: var(--primary-color);
 }
 
-.menu-social-icons {
+.menu-footer-left a {
+  color: var(--primary-color);
+}
+
+.menu-footer-left:hover h2 {
+  color: var(--secondary-color);
+}
+
+.social-media-container {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 42px;
+}
+
+.social-media-container img {
+  transition: transform 0.15s ease;
+}
+
+.social-media-container a:hover img {
+  transform: translateY(-12px);
 }
