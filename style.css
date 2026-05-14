@@ -558,6 +558,7 @@ button {
 .project-image-container.left-version {
   --dir: -1;
   --arrow-offset: 328px;
+  --arrow-rotate: 140deg;
 }
 
 .project-image-container::after {
