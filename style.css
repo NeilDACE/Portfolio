@@ -964,7 +964,6 @@ button {
 }
 
 .arrow-top-container img {
-  width: 100%;
   transform: translateY(26px);
   transition: transform 0.3s ease;
 }
