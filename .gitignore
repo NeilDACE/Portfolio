@@ -8,6 +8,7 @@ docs/
 # Environment variables & Secrets
 .env
 config.js
+contact.php
 
 # OS-specific files
 .DS_Store

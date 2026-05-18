@@ -103,7 +103,7 @@ main {
   transition: 0.1s ease-out;
 }
 
-.primary-btn:hover {
+.primary-btn:not(:disabled):hover {
   padding: 20px 80px;
   font-weight: bold;
 }
@@ -883,7 +883,6 @@ button {
   font-family: var(--font-family-overpass);
   font-weight: 400;
   font-size: 14px;
-  line-height: 120%;
   color: var(--primary-color);
 }
 
@@ -904,6 +903,11 @@ button {
   color: var(--tertiary-color);
   background-color: black;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+}
+
+.send-message-button:disabled {
+  cursor: not-allowed;
   opacity: 0.5;
 }
 /* #endregion Form Fields */
@@ -1176,4 +1180,36 @@ button {
 
 .social-media-container a:hover img {
   transform: translateY(-12px);
+}
+
+.form-message {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 8px;
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+}
+
+.form-message.success {
+  color: var(--secondary-color);
+}
+
+.form-message.error {
+  color: var(--quaternary-color);
+}
+
+.visible {
+  visibility: visible;
+}
+
+.input-feedback-icon {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  visibility: hidden;
+}
+
+.input-feedback-icon.visible {
+  visibility: visible;
 }

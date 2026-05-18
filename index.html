@@ -474,31 +474,67 @@
             <p class="contact-animation">
               Say hello! let's discuss your ideas and make it happen
             </p>
-            <form action="#">
+            <form onsubmit="submitForm(event)">
               <div class="input-group">
-                <input type="text" placeholder=" " id="name" required />
+                <input
+                  type="text"
+                  onblur="checkName()"
+                  placeholder=" "
+                  id="name"
+                  required
+                />
                 <label for="name">Your Name</label>
-                <p class="error-message">Your Name is required</p>
+                <img
+                  src="assets/imgs/not-accept-icon.svg"
+                  alt=" not accept icon"
+                  class="input-feedback-icon"
+                />
+                <p id="nameMessageError" class="error-message">
+                  Your Name is required
+                </p>
               </div>
               <div class="input-group">
-                <input type="email" placeholder=" " id="email" required />
+                <input
+                  type="email"
+                  onblur="checkEmail()"
+                  placeholder=" "
+                  id="email"
+                  required
+                />
                 <label for="email">Your Email</label>
-                <p class="error-message">Your Email is required</p>
+                <img
+                  src="assets/imgs/not-accept-icon.svg"
+                  alt=" not accept icon"
+                  class="input-feedback-icon"
+                />
+                <p id="emailMessageError" class="error-message">
+                  Your Email is required
+                </p>
               </div>
               <div class="input-group">
                 <textarea
+                  onblur="checkMessage()"
                   placeholder=" "
                   id="message"
                   rows="5"
+                  maxlength="500"
                   required
                 ></textarea>
                 <label for="message">Your Message</label>
-                <p class="error-message">Your Message is required</p>
+                <img
+                  src="assets/imgs/not-accept-icon.svg"
+                  alt=" not accept icon"
+                  class="input-feedback-icon"
+                />
+                <p id="messageMessageError" class="error-message">
+                  Please enter a message (10-500 characters)
+                </p>
               </div>
               <div>
                 <div class="agree-container">
-                  <button>
+                  <button type="button" id="privacyButton">
                     <img
+                      id="checkboxIcon"
                       src="assets/imgs/unchecked-icon.svg"
                       alt="unchecked icon"
                     />
@@ -509,10 +545,17 @@
                     to the processing of my data as outlined.
                   </p>
                 </div>
-                <p class="error-message">Please accept the privacy policy.</p>
+                <p id="formMessage" class="form-message">
+                  Please agree to the privacy policy
+                </p>
               </div>
               <div class="send-message-button-container">
-                <button type="submit" class="primary-btn send-message-button">
+                <button
+                  type="submit"
+                  class="primary-btn send-message-button"
+                  id="sendMessageButton"
+                  disabled
+                >
                   Send Message
                 </button>
               </div>
