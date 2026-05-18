@@ -691,6 +691,7 @@ button {
   font-size: 22px;
   line-height: 120%;
   color: black;
+  text-align: center;
 }
 
 .references-container {
@@ -824,11 +825,16 @@ button {
 }
 
 :is(input, textarea):hover {
-  outline: 4px solid var(--primary-color);
-  outline-offset: -4px;
+  outline: 4px solid var(--primary-color) !important;
+  outline-offset: -4px !important;
 }
 
 :is(input, textarea):focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+:is(input, textarea):not(:placeholder-shown) {
   outline: 2px solid var(--primary-color);
   outline-offset: -2px;
 }
@@ -886,8 +892,19 @@ button {
   color: var(--primary-color);
 }
 
+.agree-container:hover button img {
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
 .agree-container a {
   color: var(--secondary-color);
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
+
+.agree-container a:hover {
+  transform: scale(1.05);
 }
 
 .send-message-button-container {

@@ -5,6 +5,7 @@ const germanButton = document.getElementById("german-button");
 const privacyButton = document.getElementById("privacyButton");
 const privacyButtonIcon = document.getElementById("checkboxIcon");
 let privacyPolicyIsChecked = false;
+let pageLanguage = "de";
 const sendMessageButton = document.getElementById("sendMessageButton");
 
 menuToggle.addEventListener("click", () => {
@@ -32,12 +33,22 @@ const setActiveLanguage = (activeBtn, inactiveBtn) => {
   inactiveBtn.classList.remove("active");
 };
 
-englishButton.addEventListener("click", () =>
-  setActiveLanguage(englishButton, germanButton),
-);
-germanButton.addEventListener("click", () =>
-  setActiveLanguage(germanButton, englishButton),
-);
+const translateElements = document.querySelectorAll("[data-de], [data-en]");
+
+englishButton.addEventListener("click", () => {
+  setActiveLanguage(englishButton, germanButton);
+  pageLanguage = "en";
+  translateElements.forEach((element) => {
+    element.textContent = element.dataset.en;
+  });
+});
+germanButton.addEventListener("click", () => {
+  setActiveLanguage(germanButton, englishButton);
+  pageLanguage = "de";
+  translateElements.forEach((element) => {
+    element.textContent = element.dataset.de;
+  });
+});
 
 const arrows = document.querySelectorAll(".arrow-left-link, .arrow-right-link");
 arrows.forEach((icon) => {
@@ -120,11 +131,6 @@ function checkMessage() {
   toggleError("messageMessageError", !valid);
   updateInputFeedback("message", valid);
   return valid;
-}
-
-function checkPrivacyPolicy() {
-  toggleError("privacyPolicyError", !privacyPolicyIsChecked);
-  return privacyPolicyIsChecked;
 }
 
 function validateForm() {
