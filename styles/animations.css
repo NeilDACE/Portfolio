@@ -1,0 +1,59 @@
+@keyframes slideDown {
+  0% {
+    top: -160px;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes burger-open {
+  0% {
+    background-image: url("../assets/imgs/burger-menu/burger-menu-frame-1.svg");
+  }
+  25% {
+    background-image: url("../assets/imgs/burger-menu/burger-menu-frame-2.svg");
+  }
+  50% {
+    background-image: url("../assets/imgs/burger-menu/burger-menu-frame-3.svg");
+  }
+  75% {
+    background-image: url("../assets/imgs/burger-menu/burger-menu-frame-4.svg");
+  }
+  100% {
+    background-image: url("../assets/imgs/burger-menu/burger-menu-frame-5.svg");
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    clip-path: inset(74% 94% 0% 0%);
+  }
+  50% {
+    clip-path: inset(98% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(97.8% 0% 0% 56%);
+  }
+}
+
+@keyframes shake-tilt {
+  0% {
+    transform: translateX(47px);
+  }
+  25% {
+    transform: translateX(73px) translateY(10px);
+  }
+  50% {
+    transform: translateX(-28px) translateY(10px);
+  }
+  75% {
+    transform: translateX(-47px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

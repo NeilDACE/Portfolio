@@ -45,11 +45,17 @@
       type="image/x-icon"
     />
     <link rel="manifest" href="assets/imgs/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/sections.css" />
+    <link rel="stylesheet" href="styles/forms.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/fonts.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body onload="initPage()">
     <header>
       <div class="header-container">
         <a href="#hero-section" class="logo-link">
@@ -604,6 +610,7 @@
                   onblur="checkName()"
                   placeholder=" "
                   id="name"
+                  autocomplete="name"
                 />
                 <label for="name" data-en="Your Name" data-de="Dein Name"
                   >Your Name</label
@@ -628,6 +635,7 @@
                   onblur="checkEmail()"
                   placeholder=" "
                   id="email"
+                  autocomplete="email"
                 />
                 <label for="email" data-en="Your Email" data-de="Deine E-Mail"
                   >Your Email</label
@@ -653,6 +661,7 @@
                   id="message"
                   rows="5"
                   maxlength="500"
+                  autocomplete="off"
                 ></textarea>
                 <label
                   for="message"

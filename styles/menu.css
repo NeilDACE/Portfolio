@@ -1,0 +1,131 @@
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: var(--primary-color);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-overlay.is-open {
+  transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-links {
+  margin-top: 93px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.menu-link {
+  width: 580px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: var(--font-family-syne);
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 97.5%;
+  color: black;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid black;
+  clip-path: inset(74% 94% 0% 0%);
+  transition: clip-path 0.6s ease-in-out;
+}
+
+.menu-link:hover::after {
+  animation: border-flow 0.3s forwards;
+}
+
+.menu-link:active::after {
+  animation: none;
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.menu-footer h2 {
+  color: var(--primary-color);
+}
+
+.menu-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 100px 64px;
+  background: black;
+  color: white;
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+}
+
+.menu-footer-content {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.menu-footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.menu-footer-left p {
+  font-family: var(--font-family-overpass);
+  font-weight: 300;
+  font-size: 23px;
+  color: var(--primary-color);
+}
+
+.menu-footer-left a {
+  color: var(--primary-color);
+}
+
+.menu-footer-left:hover h2 {
+  color: var(--secondary-color);
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 42px;
+}
+
+.social-media-container img {
+  transition: transform 0.15s ease;
+}
+
+.social-media-container a:hover img {
+  transform: translateY(-12px);
+}
+
+

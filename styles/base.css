@@ -1,0 +1,76 @@
+:root {
+  --primary-color: rgb(255, 252, 243);
+  --secondary-color: rgb(0, 188, 143);
+  --tertiary-color: rgb(187, 187, 187);
+  --quaternary-color: rgb(230, 28, 64);
+  --font-family-syne: "Syne", sans-serif;
+  --font-family-syneExtraBold: "SyneExtraBold", sans-serif;
+  --font-family-overpass: "Overpass", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 128px;
+  color: black;
+  text-align: center;
+  line-height: 97.5%;
+}
+
+h2 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 78px;
+  color: black;
+  text-align: start;
+}
+
+h2:hover {
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-family: var(--font-family-syneExtraBold);
+  font-weight: 800;
+  font-size: 45px;
+  color: rgba(0, 0, 0, 1);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}

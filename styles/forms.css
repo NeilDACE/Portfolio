@@ -1,0 +1,149 @@
+:is(input, textarea) {
+  width: 100%;
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+  background-color: black;
+  padding: 15px 25px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+:is(input, textarea):hover {
+  outline: 4px solid var(--primary-color) !important;
+  outline-offset: -4px !important;
+}
+
+:is(input, textarea):focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+:is(input, textarea):not(:placeholder-shown) {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+:is(input, textarea)::placeholder {
+  color: var(--primary-color);
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group label {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  color: var(--primary-color);
+  background-color: black;
+  transition: 0.2s ease-out;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  left: 16px;
+  top: -9px;
+}
+
+.error-message {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  color: var(--quaternary-color);
+  padding-top: 8px;
+  visibility: hidden;
+}
+
+.agree-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agree-container p {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.agree-container:hover button img {
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.agree-container a {
+  color: var(--secondary-color);
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
+
+.agree-container a:hover {
+  transform: scale(1.05);
+}
+
+.send-message-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.send-message-button {
+  border: 4px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+  background-color: black;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+}
+
+.send-message-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form-message {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 8px;
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+}
+
+.form-message.success {
+  color: var(--secondary-color);
+}
+
+.form-message.error {
+  color: var(--quaternary-color);
+}
+
+.visible {
+  visibility: visible;
+}
+
+.input-feedback-icon {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  visibility: hidden;
+}
+
+.input-feedback-icon.visible {
+  visibility: visible;
+}
