@@ -11,10 +11,12 @@ let pageLanguage = "de";
  */
 function initPage() {
   bindUiEvents();
-  const initialLanguage = englishButton.classList.contains("active")
-    ? "en"
-    : "de";
-  applyLanguage(initialLanguage);
+  if (englishButton && germanButton) {
+    const initialLanguage = englishButton.classList.contains("active")
+      ? "en"
+      : "de";
+    applyLanguage(initialLanguage);
+  }
   updateSendButtonState();
 }
 
@@ -22,7 +24,9 @@ function initPage() {
  * Binds all UI event listeners.
  */
 function bindUiEvents() {
-  menuToggle.addEventListener("click", handleMenuToggle);
+  if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener("click", handleMenuToggle);
+  }
   bindMenuLinks();
   bindLanguageSwitcher();
   bindArrowHoverAnimations();
@@ -62,6 +66,7 @@ function setActiveLanguage(activeBtn, inactiveBtn) {
  */
 function updateSendButtonState() {
   const sendMessageButton = document.getElementById("sendMessageButton");
+  if (!sendMessageButton) return;
   sendMessageButton.disabled = !privacyPolicyIsChecked;
 }
 
@@ -79,6 +84,7 @@ function bindMenuLinks() {
  * Binds the language switcher buttons.
  */
 function bindLanguageSwitcher() {
+  if (!englishButton || !germanButton) return;
   englishButton.addEventListener("click", () => {
     applyLanguage("en");
   });
@@ -113,6 +119,7 @@ function bindPrivacyToggle() {
  * Toggles the full-screen menu and updates the button state.
  */
 function handleMenuToggle() {
+  if (!menuToggle || !menuOverlay) return;
   menuOverlay.classList.toggle("is-open");
   document.body.classList.toggle("no-scroll");
   const isActive = menuToggle.classList.contains("is-active");
@@ -125,6 +132,7 @@ function handleMenuToggle() {
  * Closes the full-screen menu and restores page scrolling.
  */
 function closeMenu() {
+  if (!menuToggle || !menuOverlay) return;
   menuToggle.classList.remove("is-active");
   menuToggle.classList.add("is-closed");
   menuOverlay.classList.remove("is-open");
