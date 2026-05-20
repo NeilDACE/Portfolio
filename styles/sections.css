@@ -413,3 +413,81 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 48px 0px;
+    gap: 32px;
+  }
+
+  .skills-section h2 {
+    top: -30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 0;
+  }
+
+  .skills-grid .skill-item:last-child {
+    grid-column: 2;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-item:hover img {
+    transform: none;
+    animation: none;
+  }
+
+  .skill-item:hover p {
+    color: black;
+    transition: none;
+  }
+
+  .learn-icon-container:hover img {
+    transform: none;
+    animation: none;
+  }
+
+  .ready-to-learn-container {
+    align-items: center;
+    gap: 0px;
+    padding: 0px 20px;
+  }
+
+  .learn-icon-container {
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    overflow: visible;
+    gap: 0px;
+  }
+
+  .learn-icon-container img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .ready-to-learn-container p {
+    display: inline;
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+
+  .ready-to-learn-container a {
+    font-size: 20px;
+  }
+
+  .portfolio-section p {
+    padding-top: 48px;
+    font-size: 20px;
+  }
+
+  .projects-container {
+    padding-top: 0px;
+  }
+}
