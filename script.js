@@ -116,16 +116,32 @@ function bindPrivacyToggle() {
 }
 
 /**
+ * Plays the burger icon animation in the requested direction.
+ *
+ * @param {"open" | "close"} direction - Animation direction to play.
+ */
+function playBurgerAnimation(direction) {
+  if (!menuToggle) return;
+  menuToggle.classList.remove("is-active", "is-closed");
+  void menuToggle.offsetWidth;
+  if (direction === "open") {
+    menuToggle.classList.add("is-active");
+    return;
+  }
+  menuToggle.classList.add("is-closed");
+}
+
+/**
  * Toggles the full-screen menu and updates the button state.
  */
 function handleMenuToggle() {
   if (!menuToggle || !menuOverlay) return;
-  menuOverlay.classList.toggle("is-open");
-  document.body.classList.toggle("no-scroll");
-  const isActive = menuToggle.classList.contains("is-active");
-  menuToggle.classList.toggle("is-active");
-  menuToggle.classList.toggle("is-closed");
-  menuToggle.setAttribute("aria-expanded", !isActive);
+  const isOpening = !menuOverlay.classList.contains("is-open");
+
+  menuOverlay.classList.toggle("is-open", isOpening);
+  document.body.classList.toggle("no-scroll", isOpening);
+  playBurgerAnimation(isOpening ? "open" : "close");
+  menuToggle.setAttribute("aria-expanded", String(isOpening));
 }
 
 /**
@@ -133,8 +149,7 @@ function handleMenuToggle() {
  */
 function closeMenu() {
   if (!menuToggle || !menuOverlay) return;
-  menuToggle.classList.remove("is-active");
-  menuToggle.classList.add("is-closed");
+  playBurgerAnimation("close");
   menuOverlay.classList.remove("is-open");
   document.body.classList.remove("no-scroll");
   menuToggle.setAttribute("aria-expanded", "false");
@@ -160,12 +175,14 @@ function handleArrowHover(icon) {
 function handlePrivacyToggle(event) {
   event.preventDefault();
   privacyPolicyIsChecked = !privacyPolicyIsChecked;
-  privacyButtonIcon.src = privacyPolicyIsChecked
-    ? "assets/imgs/checked-icon.svg"
-    : "assets/imgs/unchecked-icon.svg";
-  privacyButtonIcon.alt = privacyPolicyIsChecked
-    ? "checked icon"
-    : "unchecked icon";
+  if (privacyButtonIcon) {
+    privacyButtonIcon.src = privacyPolicyIsChecked
+      ? "assets/imgs/checked-icon.svg"
+      : "assets/imgs/unchecked-icon.svg";
+    privacyButtonIcon.alt = privacyPolicyIsChecked
+      ? "checked icon"
+      : "unchecked icon";
+  }
   updateSendButtonState();
 }
 
@@ -207,20 +224,23 @@ function isMessageValid(message) {
  * @param {boolean} show - Whether the element should be visible.
  */
 function toggleError(elementId, show) {
-  document.getElementById(elementId).classList.toggle("visible", show);
+  const element = document.getElementById(elementId);
+  if (!element) return;
+  element.classList.toggle("visible", show);
 }
 
 /**
  * Returns the feedback icon for a given input field.
  *
  * @param {string} fieldId - The input field id.
- * @returns {HTMLImageElement} The matching feedback icon.
+ * @returns {HTMLImageElement | null} The matching feedback icon.
  */
 function getFeedbackIcon(fieldId) {
-  return document
-    .getElementById(fieldId)
-    .closest(".input-group")
-    .querySelector(".input-feedback-icon");
+  const field = document.getElementById(fieldId);
+  if (!field) return null;
+  const inputGroup = field.closest(".input-group");
+  if (!inputGroup) return null;
+  return inputGroup.querySelector(".input-feedback-icon");
 }
 
 /**
@@ -231,6 +251,7 @@ function getFeedbackIcon(fieldId) {
  */
 function updateInputFeedback(fieldId, valid) {
   const feedbackIcon = getFeedbackIcon(fieldId);
+  if (!feedbackIcon) return;
   feedbackIcon.src = valid
     ? "assets/imgs/accept-icon.svg"
     : "assets/imgs/not-accept-icon.svg";
@@ -311,6 +332,7 @@ function buildFormData() {
  */
 function showFormMessage(message, isSuccess) {
   const formMessage = document.getElementById("formMessage");
+  if (!formMessage) return;
   formMessage.textContent = message;
   formMessage.className = isSuccess
     ? "form-message success"
@@ -337,8 +359,10 @@ function resetFormFields() {
   document.getElementById("email").value = "";
   document.getElementById("message").value = "";
   privacyPolicyIsChecked = false;
-  privacyButtonIcon.src = "assets/imgs/unchecked-icon.svg";
-  privacyButtonIcon.alt = "unchecked icon";
+  if (privacyButtonIcon) {
+    privacyButtonIcon.src = "assets/imgs/unchecked-icon.svg";
+    privacyButtonIcon.alt = "unchecked icon";
+  }
   resetInputFeedbackIcons();
   updateSendButtonState();
 }

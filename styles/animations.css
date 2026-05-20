@@ -42,13 +42,13 @@
 
 @keyframes border-flow-version-2 {
   0% {
-    clip-path: inset(74% 94% 0% 0%);
+    clip-path: inset(92% 94% 0% 20%);
   }
   50% {
-    clip-path: inset(98% 0% 0% 0%);
+    clip-path: inset(92% 0% 0% 20%);
   }
   100% {
-    clip-path: inset(97.8% 0% 0% 56%);
+    clip-path: inset(92% 0% 0% 50%);
   }
 }
 
