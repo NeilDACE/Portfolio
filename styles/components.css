@@ -132,7 +132,7 @@ button {
 }
 
 .hero-section {
-  height: 90dvh;
+  height: 100dvh;
   padding-top: 112px;
 }
 
@@ -237,6 +237,7 @@ button {
   width: 533px;
   height: 533px;
   position: relative;
+  --frame-shift: 20px;
 }
 
 .profile-picture:hover {
@@ -252,10 +253,8 @@ button {
 .profile-picture::after {
   content: "";
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 533px;
-  height: 533px;
+  inset: 0;
+  transform: translate(var(--frame-shift), var(--frame-shift));
   border: 4px solid black;
   transition: 0.3s ease-in;
   visibility: hidden;
@@ -298,4 +297,70 @@ button {
 
 .arrow-right-link.arrow-right-has-hovered .arrow-right img {
   transform: translateX(48px) translateY(48px);
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .language-switcher {
+    display: none;
+  }
+
+  .name-container p {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .divider {
+    width: 160px;
+  }
+
+  .name-container {
+    padding-top: 8px;
+    gap: 4px;
+  }
+
+  .hero-bottom-container {
+    padding-top: 200px;
+  }
+
+  .hero-bottom-container a {
+    font-size: 20px;
+  }
+
+  .hero-bottom-container p {
+    font-size: 20px;
+  }
+
+  .scroll-down-arrow {
+    width: 100%;
+  }
+
+  .about-me-section {
+    align-items: center;
+  }
+
+  .about-me-container {
+    flex-direction: column;
+  }
+
+  .about-me-container p {
+    font-size: 20px;
+  }
+
+  .profile-picture {
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-picture {
+    --frame-shift: 14px;
+  }
 }

@@ -74,3 +74,24 @@ main {
   padding-left: 100px;
   padding-right: 100px;
 }
+
+@media (max-width: 390px) {
+  header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  h1 {
+    font-size: 38px;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+}
