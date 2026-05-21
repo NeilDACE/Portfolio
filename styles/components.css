@@ -300,7 +300,7 @@ button {
   transform: translateX(48px) translateY(48px);
 }
 
-@media (max-width: 390px) {
+@media (max-width: 768px) {
   .language-switcher {
     display: none;
   }

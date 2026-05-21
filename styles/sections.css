@@ -155,7 +155,7 @@
 
 .project-image-container {
   --dir: 1;
-  --arrow-offset: 336px;
+  --arrow-offset: 329px;
   --arrow-rotate: -140deg;
   --frame-offset: 20px;
   position: relative;
@@ -166,7 +166,7 @@
 
 .project-image-container.left-version {
   --dir: -1;
-  --arrow-offset: 328px;
+  --arrow-offset: 329px;
   --arrow-rotate: 140deg;
 }
 
@@ -177,7 +177,7 @@
   left: calc(var(--frame-offset) * var(--dir));
   width: 620px;
   height: 394px;
-  border: 4px solid black;
+  box-shadow: inset 0 0 0 4px black;
   transition: 0.1s ease-in;
   z-index: 10;
   visibility: hidden;
@@ -354,7 +354,7 @@
 }
 
 .contact-section h2 {
-  color: white;
+  --h2-base-color: var(--primary-color);
 }
 
 .contact-section h2:hover {
@@ -489,5 +489,130 @@
 
   .projects-container {
     padding-top: 0px;
+    gap: 0px;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-section .project-number {
+    font-size: 24px;
+    padding-bottom: 24px;
+  }
+
+  .project-item {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .project-item.flex-row-reverse {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .project-image-container {
+    --frame-shift: 10px;
+    --frame-offset-x: calc(var(--frame-shift) * var(--dir));
+    --frame-offset-y: var(--frame-shift);
+    --arrow-offset: 159px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .project-image-container.left-version {
+    --arrow-offset: 159px;
+  }
+
+  .project-screenshot {
+    width: 300px;
+    height: 200px;
+  }
+
+  .project-image-container::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(var(--frame-offset-x), var(--frame-offset-y));
+  }
+
+  .project-image-container::before {
+    width: 24px;
+    height: 24px;
+  }
+
+  .project-item:hover .project-image-container::before {
+    width: 38px;
+    height: 38px;
+  }
+
+  .project-info {
+    padding-top: 30px;
+    transform: translateY(-60px);
+    transition: transform 0.15s ease-in;
+    visibility: hidden;
+    gap: 30px;
+  }
+
+  .project-info.left-version {
+    align-items: flex-end;
+    text-align: end;
+  }
+
+  .project-info p {
+    padding-top: 0;
+  }
+
+  .project-info.left-version p {
+    text-align: end;
+  }
+
+  .project-item:hover .project-info {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .references-section {
+    padding-top: 48px;
+  }
+
+  .references-section > p {
+    font-size: 20px;
+  }
+
+  .references-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-and-footer-container {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 48px;
+  }
+
+  .contact-section h2 {
+    font-size: 45px;
+  }
+
+  .contact-animation {
+    font-size: 20px;
+  }
+
+  .contact-container {
+    text-align: center;
+  }
+
+  .contact-container form {
+    width: 100%;
+  }
+
+  .send-message-button {
+    padding: 20px 40px;
   }
 }

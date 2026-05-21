@@ -65,3 +65,48 @@
   line-height: 120%;
   color: var(--primary-color);
 }
+
+.mobile-link {
+  font-family: var(--font-family-overpass);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--primary-color);
+  display: none;
+}
+
+.email {
+  font-size: 19px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-left-container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-right-container {
+    align-items: center;
+  }
+
+  .to-the-top-link {
+    display: none;
+  }
+
+  .mobile-link {
+    display: block;
+  }
+
+  .footer-right-container > a {
+    display: none;
+  }
+
+  .footer-left-container p {
+    display: none;
+  }
+}

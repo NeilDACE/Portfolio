@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes border-flow {
+@keyframes border-flow-version-1 {
   0% {
     clip-path: inset(74% 94% 0% 0%);
   }
@@ -37,6 +37,18 @@
   }
   100% {
     clip-path: inset(97.8% 0% 0% 56%);
+  }
+}
+
+@keyframes border-flow-version-1-mobile {
+  0% {
+    clip-path: inset(74% 94% 0% 0%);
+  }
+  50% {
+    clip-path: inset(95% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(95% 0% 0% 56%);
   }
 }
 
@@ -67,5 +79,22 @@
   }
   100% {
     transform: translateX(0px);
+  }
+}
+
+@keyframes blinking {
+  0%,
+  40% {
+    color: var(--h2-base-color);
+  }
+  50% {
+    color: var(--h2-base-color);
+  }
+  50%,
+  90% {
+    color: var(--secondary-color);
+  }
+  100% {
+    color: var(--secondary-color);
   }
 }

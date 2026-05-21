@@ -30,10 +30,11 @@ h1 {
 }
 
 h2 {
+  --h2-base-color: rgba(0, 0, 0, 1);
   font-family: var(--font-family-syneExtraBold);
   font-weight: 800;
   font-size: 78px;
-  color: black;
+  color: var(--h2-base-color);
   text-align: start;
 }
 
@@ -75,7 +76,7 @@ main {
   padding-right: 100px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 768px) {
   header {
     padding-left: 24px;
     padding-right: 24px;
@@ -93,5 +94,6 @@ main {
 
   h2 {
     font-size: 36px;
+    animation: blinking 3s ease-in-out infinite;
   }
 }
