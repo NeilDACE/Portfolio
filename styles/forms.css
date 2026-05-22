@@ -7,7 +7,7 @@
   border: none;
   outline: none;
   color: var(--primary-color);
-  background-color: black;
+  background-color: var(--quinary-color);
   padding: 15px 25px;
   border-bottom: 2px solid var(--primary-color);
 }
@@ -44,7 +44,7 @@
   left: 25px;
   top: 10px;
   color: var(--primary-color);
-  background-color: black;
+  background-color: var(--quinary-color);
   transition: 0.2s ease-out;
   pointer-events: none;
 }
@@ -106,7 +106,7 @@
 .send-message-button {
   border: 4px solid var(--tertiary-color);
   color: var(--tertiary-color);
-  background-color: black;
+  background-color: var(--quinary-color);
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
   opacity: 1;
 }
@@ -135,6 +135,10 @@
 
 .visible {
   visibility: visible;
+}
+
+.checkbox-icon {
+  filter: invert(var(--icon-invert));
 }
 
 .input-feedback-icon {

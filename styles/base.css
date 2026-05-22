@@ -3,9 +3,11 @@
   --secondary-color: rgb(0, 188, 143);
   --tertiary-color: rgb(187, 187, 187);
   --quaternary-color: rgb(230, 28, 64);
+  --quinary-color: rgba(0, 0, 0, 1);
   --font-family-syne: "Syne", sans-serif;
   --font-family-syneExtraBold: "SyneExtraBold", sans-serif;
   --font-family-overpass: "Overpass", sans-serif;
+  --icon-invert: 0;
 }
 
 * {
@@ -24,13 +26,13 @@ h1 {
   font-family: var(--font-family-syneExtraBold);
   font-weight: 800;
   font-size: 128px;
-  color: black;
+  color: var(--quinary-color);
   text-align: center;
   line-height: 97.5%;
 }
 
 h2 {
-  --h2-base-color: rgba(0, 0, 0, 1);
+  --h2-base-color: var(--quinary-color);
   font-family: var(--font-family-syneExtraBold);
   font-weight: 800;
   font-size: 78px;
@@ -46,13 +48,13 @@ h3 {
   font-family: var(--font-family-syneExtraBold);
   font-weight: 800;
   font-size: 45px;
-  color: rgba(0, 0, 0, 1);
+  color: var(--quinary-color);
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: var(--quinary-color);
 }
 
 header {

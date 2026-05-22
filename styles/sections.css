@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 4px solid black;
+  border: 4px solid var(--quinary-color);
   padding: 120px 114px;
   text-align: center;
   scroll-margin-top: 100px;
@@ -40,6 +40,7 @@
 
 .skill-item img {
   transition: transform 0.2s ease 0.8s;
+  filter: invert(var(--icon-invert));
 }
 
 .skill-item p {
@@ -47,7 +48,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
-  color: black;
+  color: var(--quinary-color);
   transition: color 0.1s ease 0.8s;
 }
 
@@ -71,6 +72,7 @@
 .learn-icon-container img {
   height: 75px;
   width: 100px;
+  filter: invert(var(--icon-invert));
   transition: transform 0.2s ease 0.8s;
 }
 
@@ -88,7 +90,7 @@
 }
 
 .ready-to-learn-container p {
-  color: black;
+  color: var(--quinary-color);
   padding-bottom: 8px;
 }
 
@@ -129,7 +131,7 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 120%;
-  color: black;
+  color: var(--quinary-color);
   text-align: center;
 }
 
@@ -177,7 +179,7 @@
   left: calc(var(--frame-offset) * var(--dir));
   width: 620px;
   height: 394px;
-  box-shadow: inset 0 0 0 4px black;
+  box-shadow: inset 0 0 0 4px var(--quinary-color);
   transition: 0.1s ease-in;
   z-index: 10;
   visibility: hidden;
@@ -202,6 +204,7 @@
     transform 0.2s ease-in,
     width 0.2s ease-in,
     height 0.2s ease-in;
+  filter: invert(var(--icon-invert));
 }
 
 .project-item:hover .project-image-container::after {
@@ -259,7 +262,7 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 120%;
-  color: black;
+  color: var(--quinary-color);
 }
 
 .project-number-container {
@@ -299,7 +302,7 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 120%;
-  color: black;
+  color: var(--quinary-color);
   text-align: center;
 }
 
@@ -314,7 +317,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 4px black;
+  border: solid 4px var(--quinary-color);
   padding: 24px 16px;
   gap: 8px;
   flex: 1;
@@ -340,8 +343,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: white;
+  background-color: var(--quinary-color);
+  color: var(--primary-color);
   clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
   padding-top: 100px;
   padding-left: 100px;
@@ -436,6 +439,7 @@
   .skill-icon {
     width: 60px;
     height: 60px;
+    filter: invert(var(--icon-invert));
   }
 
   .skill-item:hover img {
@@ -444,7 +448,7 @@
   }
 
   .skill-item:hover p {
-    color: black;
+    color: var(--primary-color);
     transition: none;
   }
 
