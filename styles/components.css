@@ -95,6 +95,11 @@
   clip-path: inset(0% 0% 0% 0%);
 }
 
+.mobile-switcher {
+  display: none;
+  visibility: hidden;
+}
+
 .active {
   border: 2px solid var(--secondary-color);
 }
@@ -303,6 +308,10 @@ button {
 @media (max-width: 768px) {
   .language-switcher {
     display: none;
+  }
+
+  .mobile-switcher {
+    display: flex;
   }
 
   .name-container p {

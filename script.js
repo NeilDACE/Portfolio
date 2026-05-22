@@ -2,6 +2,9 @@ const menuToggle = document.getElementById("menu-toggle");
 const menuOverlay = document.getElementById("full-screen-menu");
 const englishButton = document.getElementById("english-button");
 const germanButton = document.getElementById("german-button");
+const englishButtonMobile = document.getElementById("english-button-mobile");
+const germanButtonMobile = document.getElementById("german-button-mobile");
+const mobileMenu = document.getElementById("mobile-language-switcher");
 const privacyButtonIcon = document.getElementById("checkboxIcon");
 let privacyPolicyIsChecked = false;
 let pageLanguage = "de";
@@ -41,12 +44,28 @@ function bindUiEvents() {
 function applyLanguage(language) {
   const translateElements = document.querySelectorAll("[data-de], [data-en]");
   pageLanguage = language;
-  const activeBtn = language === "en" ? englishButton : germanButton;
-  const inactiveBtn = language === "en" ? germanButton : englishButton;
-  setActiveLanguage(activeBtn, inactiveBtn);
+  setLanguageButtonStates(language);
   translateElements.forEach((element) => {
     const translatedText = element.dataset[language];
     if (translatedText) element.textContent = translatedText;
+  });
+}
+
+/**
+ * Updates desktop and mobile language button active states.
+ *
+ * @param {"en" | "de"} language - The active language.
+ */
+function setLanguageButtonStates(language) {
+  const buttonPairs = [
+    [englishButton, germanButton],
+    [englishButtonMobile, germanButtonMobile],
+  ];
+  buttonPairs.forEach(([enButton, deButton]) => {
+    if (!enButton || !deButton) return;
+    const activeBtn = language === "en" ? enButton : deButton;
+    const inactiveBtn = language === "en" ? deButton : enButton;
+    setActiveLanguage(activeBtn, inactiveBtn);
   });
 }
 
@@ -84,12 +103,17 @@ function bindMenuLinks() {
  * Binds the language switcher buttons.
  */
 function bindLanguageSwitcher() {
-  if (!englishButton || !germanButton) return;
-  englishButton.addEventListener("click", () => {
-    applyLanguage("en");
-  });
-  germanButton.addEventListener("click", () => {
-    applyLanguage("de");
+  const languageButtons = [
+    [englishButton, "en"],
+    [germanButton, "de"],
+    [englishButtonMobile, "en"],
+    [germanButtonMobile, "de"],
+  ];
+  languageButtons.forEach(([button, language]) => {
+    if (!button) return;
+    button.addEventListener("click", () => {
+      applyLanguage(language);
+    });
   });
 }
 
@@ -137,11 +161,21 @@ function playBurgerAnimation(direction) {
 function handleMenuToggle() {
   if (!menuToggle || !menuOverlay) return;
   const isOpening = !menuOverlay.classList.contains("is-open");
-
   menuOverlay.classList.toggle("is-open", isOpening);
+  setMobileLanguageMenuVisibility(isOpening);
   document.body.classList.toggle("no-scroll", isOpening);
   playBurgerAnimation(isOpening ? "open" : "close");
   menuToggle.setAttribute("aria-expanded", String(isOpening));
+}
+
+/**
+ * Sets visibility for the mobile language switcher.
+ *
+ * @param {boolean} isVisible - Whether the switcher should be visible.
+ */
+function setMobileLanguageMenuVisibility(isVisible) {
+  if (!mobileMenu) return;
+  mobileMenu.classList.toggle("visible", isVisible);
 }
 
 /**
@@ -151,6 +185,7 @@ function closeMenu() {
   if (!menuToggle || !menuOverlay) return;
   playBurgerAnimation("close");
   menuOverlay.classList.remove("is-open");
+  setMobileLanguageMenuVisibility(false);
   document.body.classList.remove("no-scroll");
   menuToggle.setAttribute("aria-expanded", "false");
 }
