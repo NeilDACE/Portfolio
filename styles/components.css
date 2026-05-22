@@ -283,26 +283,63 @@ button {
   justify-content: flex-end;
 }
 
-.arrow-left-link img {
+.arrow-left,
+.arrow-right {
   position: relative;
-  transition: transform 0.3s ease;
+  width: 300px;
+  height: 300px;
 }
 
 .arrow-right-link {
   justify-content: flex-start;
 }
 
-.arrow-right-link img {
-  position: relative;
-  transition: transform 0.3s ease;
+.arrow-left img,
+.arrow-right img {
+  display: none;
 }
 
-.arrow-left-link.arrow-left-has-hovered .arrow-left img {
-  transform: translateX(-48px) translateY(48px);
+.arrow-left::before,
+.arrow-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform-origin: center;
+  pointer-events: none;
 }
 
-.arrow-right-link.arrow-right-has-hovered .arrow-right img {
-  transform: translateX(48px) translateY(48px);
+.arrow-left::before {
+  background-image: url("../assets/imgs/arrow-left/arrow-left-frame-1.svg");
+}
+
+.arrow-right::before {
+  background-image: url("../assets/imgs/arrow-right/arrow-right-frame-1.svg");
+}
+
+.arrow-left-link.arrow-left-has-hovered .arrow-left::before {
+  animation: arrow-left-move 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.arrow-right-link.arrow-right-has-hovered .arrow-right::before {
+  animation: arrow-right-move 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+body::after {
+  content: url("../assets/imgs/arrow-left/arrow-left-frame-1.svg")
+    url("../assets/imgs/arrow-left/arrow-left-frame-2.svg")
+    url("../assets/imgs/arrow-left/arrow-left-frame-3.svg")
+    url("../assets/imgs/arrow-right/arrow-right-frame-1.svg")
+    url("../assets/imgs/arrow-right/arrow-right-frame-2.svg")
+    url("../assets/imgs/arrow-right/arrow-right-frame-3.svg");
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -381,5 +418,18 @@ button {
 
   .about-me-content {
     padding-right: 0;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    width: 250px;
+    height: 250px;
+  }
+
+  .arrow-left-link,
+  .arrow-right-link {
+    padding-top: 0px;
+    padding-bottom: 32px;
+    cursor: default;
   }
 }

@@ -132,3 +132,27 @@
     box-shadow: none;
   }
 }
+
+@keyframes arrow-left-move {
+  0% {
+    background-image: url("../assets/imgs/arrow-left/arrow-left-frame-1.svg");
+  }
+  50% {
+    background-image: url("../assets/imgs/arrow-left/arrow-left-frame-2.svg");
+  }
+  100% {
+    background-image: url("../assets/imgs/arrow-left/arrow-left-frame-3.svg");
+  }
+}
+
+@keyframes arrow-right-move {
+  0% {
+    background-image: url("../assets/imgs/arrow-right/arrow-right-frame-1.svg");
+  }
+  50% {
+    background-image: url("../assets/imgs/arrow-right/arrow-right-frame-2.svg");
+  }
+  100% {
+    background-image: url("../assets/imgs/arrow-right/arrow-right-frame-3.svg");
+  }
+}
