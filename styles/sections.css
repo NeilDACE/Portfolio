@@ -515,20 +515,25 @@
   }
 
   .project-image-container {
-    --frame-shift: 10px;
-    --frame-offset-x: calc(var(--frame-shift) * var(--dir));
-    --frame-offset-y: var(--frame-shift);
-    --arrow-offset: 159px;
-    width: 300px;
-    height: 200px;
+    --arrow-rotate: 45deg;
   }
 
   .project-image-container.left-version {
-    --arrow-offset: 159px;
+    --arrow-rotate: -45deg;
+    --arrow-offset: 167px;
+  }
+
+  .project-image-container {
+    --frame-shift: 10px;
+    --frame-offset-x: calc(var(--frame-shift) * var(--dir));
+    --frame-offset-y: var(--frame-shift);
+    --arrow-offset: 167px;
+    width: 316px;
+    height: 200px;
   }
 
   .project-screenshot {
-    width: 300px;
+    width: 316px;
     height: 200px;
   }
 
@@ -541,8 +546,8 @@
   }
 
   .project-image-container::before {
-    width: 24px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
   }
 
   .project-item:hover .project-image-container::after {
@@ -553,8 +558,8 @@
     visibility: hidden;
     transform: translate(-50%, -50%)
       translateX(calc(var(--arrow-offset) * var(--dir))) rotate(0deg);
-    width: 24px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
   }
 
   .project-item:hover .project-screenshot {
@@ -572,8 +577,8 @@
   }
 
   .project-item.is-open .project-image-container::before {
-    width: 38px;
-    height: 38px;
+    width: 58px;
+    height: 58px;
     visibility: visible;
     transform: translate(-50%, -50%)
       translateX(calc(var(--arrow-offset) * var(--dir)))
