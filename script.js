@@ -32,8 +32,25 @@ function bindUiEvents() {
   }
   bindMenuLinks();
   bindLanguageSwitcher();
+  bindProjectItemToggle();
   bindArrowHoverAnimations();
   bindPrivacyToggle();
+}
+
+/**
+ * Enables mobile tap-to-toggle behavior for project items.
+ */
+function bindProjectItemToggle() {
+  const projectItems = document.querySelectorAll(".project-item");
+  if (!projectItems.length) return;
+
+  projectItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      if (window.matchMedia("(min-width: 769px)").matches) return;
+      if (event.target.closest("a")) return;
+      item.classList.add("is-open");
+    });
+  });
 }
 
 /**

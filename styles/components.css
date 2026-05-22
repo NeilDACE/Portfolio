@@ -371,6 +371,14 @@ button {
     --frame-shift: 14px;
   }
 
+  .profile-picture::after {
+    animation: blinking-frame 3s ease-in-out infinite;
+  }
+
+  .profile-picture {
+    animation: blinking-shadow 3s ease-in-out infinite;
+  }
+
   .about-me-content {
     padding-right: 0;
   }

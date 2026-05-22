@@ -98,3 +98,37 @@
     color: var(--secondary-color);
   }
 }
+
+@keyframes blinking-frame {
+  0%,
+  40% {
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+  }
+  50%,
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes blinking-shadow {
+  0%,
+  40% {
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+  50%,
+  90% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
