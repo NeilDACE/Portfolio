@@ -14,7 +14,7 @@
 
 .header-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1240px;
   height: 92px;
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1240px;
 }
 
 .header-nav {
@@ -275,8 +275,6 @@ button {
   display: flex;
   align-items: center;
   width: 100%;
-  padding-top: 24px;
-  padding-bottom: 120px;
 }
 
 .arrow-left-link {
