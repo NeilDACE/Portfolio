@@ -167,3 +167,9 @@ p {
     justify-content: flex-start;
   }
 }
+
+@media (max-height: 820px) {
+  .menu-links {
+    margin-top: 75px;
+  }
+}

@@ -90,12 +90,32 @@ main {
   }
 
   h1 {
-    font-size: 38px;
+    font-size: 54px;
     line-height: 100%;
   }
 
   h2 {
     font-size: 36px;
     animation: blinking 3s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
   }
 }

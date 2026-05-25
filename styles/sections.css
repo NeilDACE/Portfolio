@@ -18,7 +18,6 @@
 }
 
 .skills-grid {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 128px;
@@ -399,6 +398,7 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 120%;
+  color: var(--primary-color);
 }
 
 .contact-container {
@@ -428,7 +428,7 @@
   }
 
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px 0;
   }
 
@@ -448,7 +448,6 @@
   }
 
   .skill-item:hover p {
-    color: var(--primary-color);
     transition: none;
   }
 
@@ -658,5 +657,115 @@
 
   .send-message-button {
     padding: 20px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ready-to-learn-container p {
+    font-size: 20px;
+  }
+
+  .ready-to-learn-container a {
+    font-size: 20px;
+  }
+
+  .portfolio-section p {
+    padding-top: 48px;
+    font-size: 20px;
+  }
+
+  .portfolio-section p {
+    padding-top: 0;
+    font-size: 20px;
+  }
+
+  .portfolio-section .project-skills {
+    font-size: 20px;
+  }
+
+  .project-info {
+    gap: 20px;
+  }
+
+  .portfolio-section .project-number {
+    padding-top: 24px;
+  }
+
+  .contact-container {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ready-to-learn-container p {
+    font-size: 18px;
+  }
+
+  .ready-to-learn-container a {
+    font-size: 18px;
+  }
+
+  .portfolio-section p {
+    padding-top: 32px;
+    font-size: 18px;
+  }
+
+  .project-image-container.left-version {
+    --arrow-offset: 132px;
+  }
+
+  .project-image-container {
+    --arrow-offset: 132px;
+    width: 246px;
+    height: 150px;
+  }
+
+  .project-screenshot {
+    width: 246px;
+    height: 150px;
+  }
+
+  .portfolio-section p {
+    padding-top: 0;
+    font-size: 20px;
+  }
+
+  .portfolio-section .project-skills {
+    font-size: 20px;
+  }
+
+  .project-info {
+    gap: 20px;
+  }
+
+  .portfolio-section .project-number {
+    padding-top: 24px;
+  }
+
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .contact-headline {
+    font-size: 24px;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    gap: 16px;
   }
 }
