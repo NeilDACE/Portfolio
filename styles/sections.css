@@ -417,18 +417,154 @@
   gap: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .skills-section {
     padding: 48px 0px;
     gap: 32px;
   }
 
   .skills-section h2 {
+    top: -40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+
+  .ready-to-learn-container p {
+    padding: 8px;
+  }
+
+  .portfolio-section p {
+    padding-top: 48px;
+  }
+
+  .projects-container {
+    padding-top: 0px;
+    gap: 0px;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-section .project-number {
+    font-size: 24px;
+    padding-bottom: 24px;
+  }
+
+  .project-item {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .project-item.flex-row-reverse {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .project-image-container {
+    --arrow-rotate: 45deg;
+  }
+
+  .project-image-container.left-version {
+    --arrow-rotate: -45deg;
+    --arrow-offset: 320px;
+  }
+
+  .project-image-container {
+    --frame-shift: 14px;
+    --frame-offset-x: calc(var(--frame-shift) * var(--dir));
+    --frame-offset-y: var(--frame-shift);
+    --arrow-offset: 320px;
+  }
+
+  .project-image-container::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(var(--frame-offset-x), var(--frame-offset-y));
+  }
+
+  .project-info {
+    padding-top: 30px;
+    transform: translateY(-60px);
+    transition: transform 0.15s ease-in;
+    visibility: hidden;
+    gap: 30px;
+  }
+
+  .project-info.left-version {
+    align-items: flex-end;
+    text-align: end;
+  }
+
+  .project-info p {
+    padding-top: 0;
+  }
+
+  .project-info.left-version p {
+    text-align: end;
+  }
+
+  .project-item.is-open .project-info {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .references-section {
+    padding-top: 48px;
+  }
+
+  .references-section > p {
+    font-size: 20px;
+  }
+
+  .references-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-and-footer-container {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 48px;
+  }
+
+  .contact-section h2 {
+    font-size: 45px;
+  }
+
+  .contact-animation {
+    font-size: 20px;
+  }
+
+  .contact-container {
+    text-align: center;
+  }
+
+  .contact-container form {
+    width: 100%;
+  }
+
+  .send-message-button {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .skills-section h2 {
     top: -30px;
   }
 
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px 0;
   }
 

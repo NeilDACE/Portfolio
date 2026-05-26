@@ -133,7 +133,13 @@ p {
   transform: translateY(-12px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
+  .menu-footer {
+    padding: 60px 48px 48px;
+  }
+}
+
+@media (max-width: 800px) {
   .menu-links {
     margin-top: 218px;
   }

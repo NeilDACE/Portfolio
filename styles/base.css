@@ -78,7 +78,28 @@ main {
   padding-right: 100px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
+  header {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  main {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  h1 {
+    font-size: 80px;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 800px) {
   header {
     padding-left: 24px;
     padding-right: 24px;
@@ -91,12 +112,15 @@ main {
 
   h1 {
     font-size: 54px;
-    line-height: 100%;
   }
 
   h2 {
     font-size: 36px;
     animation: blinking 3s ease-in-out infinite;
+  }
+
+  h3 {
+    font-size: 28px;
   }
 }
 
@@ -108,14 +132,14 @@ main {
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 30px;
-  }
-
-  h2 {
     font-size: 28px;
   }
 
-  h3 {
+  h2 {
     font-size: 26px;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 }
