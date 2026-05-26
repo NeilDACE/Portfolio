@@ -34,7 +34,7 @@ p {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 8px;
 }
 
 .menu-link {

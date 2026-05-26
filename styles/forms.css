@@ -8,7 +8,7 @@
   outline: none;
   color: var(--primary-color);
   background-color: var(--quinary-color);
-  padding: 15px 25px;
+  padding: 15px 56px 15px 25px;
   border-bottom: 2px solid var(--primary-color);
 }
 
@@ -49,10 +49,10 @@
   pointer-events: none;
 }
 
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label,
-.input-group textarea:focus + label,
-.input-group textarea:not(:placeholder-shown) + label {
+.input-group:has(input:focus) label,
+.input-group:has(input:not(:placeholder-shown)) label,
+.input-group:has(textarea:focus) label,
+.input-group:has(textarea:not(:placeholder-shown)) label {
   left: 16px;
   top: -9px;
 }

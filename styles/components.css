@@ -157,6 +157,7 @@ button {
   font-weight: 300;
   font-size: 22px;
   color: var(--quinary-color);
+  text-align: center;
 }
 
 .hero-bottom-container a {

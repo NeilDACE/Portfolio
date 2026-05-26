@@ -59,3 +59,17 @@ a {
   text-decoration: none;
   color: var(--secondary-color);
 }
+
+@media (max-width: 800px) {
+  .main-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 48px;
+    padding-bottom: 32px;
+  }
+}

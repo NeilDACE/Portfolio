@@ -75,12 +75,13 @@
           </button>
           <button id="german-button-mobile" type="button">DE</button>
         </div>
-        <nav class="header-nav">
+        <nav aria-label="header navigation" class="header-nav">
           <div class="language-switcher">
             <button id="english-button" type="button" class="active">EN</button>
             <button id="german-button" type="button">DE</button>
           </div>
           <button
+            aria-label="main menu"
             type="button"
             aria-expanded="false"
             aria-controls="full-screen-menu"
@@ -121,7 +122,7 @@
             >
           </li>
         </ul>
-        <div class="menu-footer">
+        <footer class="menu-footer">
           <div class="menu-footer-content">
             <div class="contact-link-container">
               <a href="#contact-section" class="menu-footer-left">
@@ -147,7 +148,7 @@
               /></a>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
     </nav>
     <main>
@@ -238,13 +239,21 @@
             </div>
           </div>
         </section>
-        <a class="arrow-left-link" href="#skills-section">
+        <a
+          class="arrow-left-link"
+          href="#skills-section"
+          aria-labelledby="skills-section"
+        >
           <div class="arrow-left">
             <img src="assets/imgs/arrow-left/arrow-left-frame-1.svg" alt="" />
           </div>
         </a>
-        <section class="skills-section" id="skills-section">
-          <h2>My Skills</h2>
+        <section
+          class="skills-section"
+          id="skills-section"
+          aria-label="skills section"
+        >
+          <h2 data-en="My Skills" data-de="Skills">My Skills</h2>
           <div class="skills-grid">
             <div class="skill-item">
               <img
@@ -351,7 +360,11 @@
             </p>
           </div>
         </section>
-        <a class="arrow-right-link" href="#portfolio-section">
+        <a
+          class="arrow-right-link"
+          href="#portfolio-section"
+          aria-labelledby="portfolio-section"
+        >
           <div class="arrow-right">
             <img
               src="assets/imgs/right-arrow-icon.svg"
@@ -359,7 +372,11 @@
             />
           </div>
         </a>
-        <section class="portfolio-section" id="portfolio-section">
+        <section
+          class="portfolio-section"
+          id="portfolio-section"
+          aria-label="portfolio section"
+        >
           <h2>Portfolio</h2>
           <p
             data-en="Explore a selection of my work here - Interact with projects to see my skills in action."
@@ -423,12 +440,12 @@
                       JavaScript | HTML | CSS | Firebase
                     </p>
                     <p
-                      data-en="A simple Jump and Run Game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the evils chickens in his dream."
-                      data-de="Ein einfaches Jump-and-Run-Spiel auf objektorientierter Basis. Hilf Pepe, Münzen und Salsa-Flaschen zu finden, um in seinem Traum gegen die bösen Hühner zu kämpfen."
+                      data-en="Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+                      data-de="Task-Manager inspiriert vom Kanban-System. Erstellen und Organisieren von Aufgaben mit Drag-and-Drop-Funktionen, Zuweisen von Benutzern und Kategorien."
                     >
-                      A simple Jump and Run Game based on an object-oriented
-                      approach. Help Pepe to find coins and salsa bottles to
-                      fight against the evils chickens in his dream.
+                      Task manager inspired by the Kanban System. Create and
+                      organize tasks using drag and drop functions, assign users
+                      and categories.
                     </p>
                     <a
                       class="primary-btn"
@@ -595,7 +612,11 @@
             </div>
           </div>
         </section>
-        <a class="arrow-left-link" href="#contact-section">
+        <a
+          class="arrow-left-link"
+          href="#contact-section"
+          aria-labelledby="contact-section"
+        >
           <div class="arrow-left">
             <img src="assets/imgs/arrow-left/arrow-left-frame-1.svg" alt="" />
           </div>
@@ -604,7 +625,11 @@
     </main>
     <div class="contact-and-footer-container">
       <div class="contact-and-footer-content">
-        <section id="contact-section" class="contact-section">
+        <section
+          id="contact-section"
+          class="contact-section"
+          aria-label="contact section"
+        >
           <h2 data-en="Say Hi!" data-de="Sag Hallo!">Say Hi!</h2>
           <div class="contact-container">
             <p
@@ -623,16 +648,17 @@
             </p>
             <form onsubmit="submitForm(event)">
               <div class="input-group">
+                <label for="name" data-en="Your Name" data-de="Dein Name"
+                  >Your Name</label
+                >
                 <input
                   type="text"
                   onblur="checkName()"
                   placeholder=" "
                   id="name"
                   autocomplete="name"
+                  maxlength="150"
                 />
-                <label for="name" data-en="Your Name" data-de="Dein Name"
-                  >Your Name</label
-                >
                 <img
                   src="assets/imgs/not-accept-icon.svg"
                   alt=" not accept icon"
@@ -648,16 +674,17 @@
                 </p>
               </div>
               <div class="input-group">
+                <label for="email" data-en="Your Email" data-de="Deine E-Mail"
+                  >Your Email</label
+                >
                 <input
                   type="email"
                   onblur="checkEmail()"
                   placeholder=" "
                   id="email"
                   autocomplete="email"
+                  maxlength="254"
                 />
-                <label for="email" data-en="Your Email" data-de="Deine E-Mail"
-                  >Your Email</label
-                >
                 <img
                   src="assets/imgs/not-accept-icon.svg"
                   alt=" not accept icon"
@@ -673,6 +700,12 @@
                 </p>
               </div>
               <div class="input-group">
+                <label
+                  for="message"
+                  data-en="Your Message"
+                  data-de="Deine Nachricht"
+                  >Your Message</label
+                >
                 <textarea
                   onblur="checkMessage()"
                   placeholder=" "
@@ -681,11 +714,7 @@
                   maxlength="500"
                   autocomplete="off"
                 ></textarea>
-                <label
-                  for="message"
-                  data-en="Your Message"
-                  data-de="Deine Nachricht"
-                  >Your Message</label
+
                 >
                 <img
                   src="assets/imgs/not-accept-icon.svg"
