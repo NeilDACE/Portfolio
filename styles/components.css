@@ -451,6 +451,14 @@ body::after {
   .scroll-down-arrow {
     width: 100%;
   }
+
+  .profile-picture img {
+    animation: blinking-shadow 3s ease-in-out infinite;
+  }
+
+  .profile-picture::after {
+    animation: blinking-frame 3s ease-in-out infinite;
+  }
 }
 
 @media (max-width: 600px) {
@@ -495,11 +503,6 @@ body::after {
   .profile-picture img {
     width: 100%;
     height: 100%;
-    animation: blinking-shadow 3s ease-in-out infinite;
-  }
-
-  .profile-picture::after {
-    animation: blinking-frame 3s ease-in-out infinite;
   }
 }
 
