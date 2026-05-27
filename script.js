@@ -28,7 +28,7 @@ function initPage() {
  */
 function bindUiEvents() {
   if (menuToggle && menuOverlay) {
-    menuToggle.addEventListener("click", handleMenuToggle);
+    addPressListener(menuToggle, handleMenuToggle);
   }
   bindMenuLinks();
   bindLanguageSwitcher();
@@ -38,15 +38,39 @@ function bindUiEvents() {
 }
 
 /**
+ * Binds click and touchstart to the same handler while preventing duplicate
+ * invocations that can happen from synthetic click events after touch.
+ *
+ * @param {Element} element - The element that receives the listeners.
+ * @param {(event: Event) => void} handler - Callback for both interactions.
+ */
+function addPressListener(element, handler) {
+  let lastTouchTimestamp = 0;
+  element.addEventListener(
+    "touchstart",
+    (event) => {
+      lastTouchTimestamp = Date.now();
+      handler(event);
+    },
+    { passive: false },
+  );
+  element.addEventListener("click", (event) => {
+    if (Date.now() - lastTouchTimestamp < 500) return;
+    handler(event);
+  });
+}
+
+/**
  * Enables mobile tap-to-toggle behavior for project items.
  */
 function bindProjectItemToggle() {
   const projectItems = document.querySelectorAll(".project-item");
   if (!projectItems.length) return;
-
   projectItems.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      if (window.matchMedia("(min-width: 769px)").matches) return;
+    addPressListener(item, (event) => {
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        return;
+      }
       if (event.target.closest("a")) return;
       item.classList.add("is-open");
     });
@@ -112,7 +136,7 @@ function updateSendButtonState() {
 function bindMenuLinks() {
   const menuLinks = document.querySelectorAll(".menu-link, .menu-footer-left");
   menuLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
+    addPressListener(link, closeMenu);
   });
 }
 
@@ -128,7 +152,7 @@ function bindLanguageSwitcher() {
   ];
   languageButtons.forEach(([button, language]) => {
     if (!button) return;
-    button.addEventListener("click", () => {
+    addPressListener(button, () => {
       applyLanguage(language);
     });
   });
@@ -153,7 +177,8 @@ function bindArrowHoverAnimations() {
  */
 function bindPrivacyToggle() {
   const privacyButton = document.getElementById("privacyButton");
-  privacyButton?.addEventListener("click", handlePrivacyToggle);
+  if (!privacyButton) return;
+  addPressListener(privacyButton, handlePrivacyToggle);
 }
 
 /**
