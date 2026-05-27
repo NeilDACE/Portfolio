@@ -327,8 +327,8 @@
 }
 
 .reference-item:hover img {
-  filter: invert(53%) sepia(87%) saturate(452%) hue-rotate(119deg)
-    brightness(95%) contrast(101%);
+  color: var(--secondary-color);
+  filter: invert(var(--icon-invert-secondary));
 }
 
 .reference-contact {
