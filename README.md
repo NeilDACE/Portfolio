@@ -3,7 +3,7 @@
 Portfolio project with a static frontend structure (HTML, CSS, JavaScript) and a PHP contact form.
 
 ## Screenshot
-<img width="1320" height="822" alt="image" src="https://github.com/user-attachments/assets/8bb8ff59-bf25-4a35-859e-3fc613c79155" />
+<img width="1300" height="830" alt="image" src="https://github.com/user-attachments/assets/d1adc105-a2f2-449c-8cc5-b85e00672037" />
 
 ## Contents
 
