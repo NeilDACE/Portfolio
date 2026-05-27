@@ -7,6 +7,11 @@
   transition: 0.1s ease-out;
 }
 
+.border-color-secondary {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
 .primary-btn:not(:disabled):hover {
   padding: 20px 80px;
   font-weight: bold;
