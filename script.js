@@ -6,20 +6,45 @@ const englishButtonMobile = document.getElementById("english-button-mobile");
 const germanButtonMobile = document.getElementById("german-button-mobile");
 const mobileMenu = document.getElementById("mobile-language-switcher");
 const privacyButtonIcon = document.getElementById("checkboxIcon");
+const LANGUAGE_STORAGE_KEY = "portfolio-language";
 let privacyPolicyIsChecked = false;
-let pageLanguage = "de";
+let pageLanguage = "en";
+
+/**
+ * Reads the persisted language from localStorage.
+ *
+ * @returns {"en" | "de" | null} The persisted language or null when missing.
+ */
+function getStoredLanguage() {
+  try {
+    const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (storedLanguage === "en" || storedLanguage === "de") {
+      return storedLanguage;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Persists the selected language in localStorage.
+ *
+ * @param {"en" | "de"} language - The language code to persist.
+ */
+function setStoredLanguage(language) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {}
+}
 
 /**
  * Initializes the page state and binds all UI interactions.
  */
 function initPage() {
   bindUiEvents();
-  if (englishButton && germanButton) {
-    const initialLanguage = englishButton.classList.contains("active")
-      ? "en"
-      : "de";
-    applyLanguage(initialLanguage);
-  }
+  const initialLanguage = getStoredLanguage() || "en";
+  applyLanguage(initialLanguage);
   updateSendButtonState();
 }
 
@@ -82,6 +107,7 @@ function bindProjectItemToggle() {
 function applyLanguage(language) {
   const translateElements = document.querySelectorAll("[data-de], [data-en]");
   pageLanguage = language;
+  setStoredLanguage(language);
   setLanguageButtonStates(language);
   translateElements.forEach((element) => {
     const translatedText = element.dataset[language];
@@ -499,3 +525,5 @@ async function submitForm(event) {
     handleSubmitError(error);
   }
 }
+
+document.addEventListener("DOMContentLoaded", initPage);

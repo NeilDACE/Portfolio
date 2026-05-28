@@ -238,9 +238,17 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  transform: translateX(calc(-760px * var(--dir)));
-  transition: transform 0.15s ease-in;
+  opacity: 0;
   visibility: hidden;
+  transform: translate(calc(-64px * var(--dir)), 48px) scale(0.88);
+  transform-origin: calc(50% + (18% * var(--dir))) 100%;
+  transition:
+    transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.24s ease;
+}
+
+.is-open .project-info {
+  opacity: 1;
 }
 
 .project-info.left-version {
@@ -252,8 +260,9 @@
 }
 
 .project-item:hover .project-info {
-  transform: translateX(0);
+  opacity: 1;
   visibility: visible;
+  transform: translate(0, 0) scale(1);
 }
 
 .portfolio-section .project-number {
