@@ -34,11 +34,11 @@
 
 .skill-item:hover img {
   transform: translateX(2px);
-  animation: shake-tilt 0.2s ease;
+  animation: shake-tilt 0.3s ease;
 }
 
 .skill-item img {
-  transition: transform 0.2s ease 0.8s;
+  transition: transform 0.3s ease 0.8s;
   filter: invert(var(--icon-invert));
 }
 

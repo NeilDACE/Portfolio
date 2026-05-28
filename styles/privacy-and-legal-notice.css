@@ -1,10 +1,10 @@
-h1 {
+main h1 {
   font-size: 78px;
   text-align: start;
   padding-bottom: 64px;
 }
 
-h2 {
+main h2 {
   font-family: var(--font-family-syneExtraBold);
   font-weight: 800;
   font-size: 24px;
@@ -13,7 +13,7 @@ h2 {
   color: var(--secondary-color);
 }
 
-h3 {
+main h3 {
   font-family: var(--font-family-overpass);
   font-weight: bold;
   font-size: 16px;
@@ -22,18 +22,18 @@ h3 {
   color: var(--secondary-color);
 }
 
-ul {
+main ul {
   list-style-position: inside;
 }
 
-li {
+main li {
   font-family: var(--font-family-overpass);
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
 }
 
-p {
+main p {
   font-family: var(--font-family-overpass);
   font-weight: 400;
   font-size: 16px;
@@ -55,12 +55,12 @@ p {
   padding-right: 150px;
 }
 
-a {
+main a {
   text-decoration: none;
   color: var(--secondary-color);
 }
 
-h1 {
+main h1 {
   color: var(--secondary-color);
   padding-bottom: 16px;
 }
@@ -70,13 +70,13 @@ h1 {
 }
 
 @media (max-width: 1280px) {
-  h1 {
+  main h1 {
     font-size: 54px;
   }
 }
 
 @media (max-width: 800px) {
-  h1 {
+  main h1 {
     font-size: 48px;
   }
 
@@ -87,7 +87,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  main h1 {
     font-size: 26px;
     padding-bottom: 0;
   }
