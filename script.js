@@ -247,4 +247,7 @@ function handleArrowHover(icon) {
   icon.classList.add(className);
 }
 
-document.addEventListener("DOMContentLoaded", initPage);
+document.addEventListener("DOMContentLoaded", () => {
+  initPage();
+  AOS.init();
+});

@@ -44,6 +44,7 @@
       href="assets/imgs/favicon/favicon.ico"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css" />
     <link rel="manifest" href="assets/imgs/favicon/site.webmanifest" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/components.css" />
@@ -54,6 +55,7 @@
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/sections-responsive.css" />
     <link rel="stylesheet" href="styles/fonts.css" />
+    <script src="assets/vendor/aos/aos.js" defer></script>
     <script src="scripts/form-handler.js" defer></script>
     <script src="script.js" defer></script>
   </head>
@@ -564,7 +566,12 @@
             what my colleagues have to say about working with me.
           </p>
           <div class="references-container">
-            <div class="reference-item">
+            <div
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1200"
+              class="reference-item"
+            >
               <div class="reference-contact">
                 <img src="assets/imgs/format_quote.svg" alt="quote icon" />
                 <p class="contact-name">A.Vielkind</p>
@@ -584,7 +591,12 @@
                 Coming soon!
               </p>
             </div>
-            <div class="reference-item">
+            <div
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1200"
+              class="reference-item"
+            >
               <div class="reference-contact">
                 <img src="assets/imgs/format_quote.svg" alt="quote icon" />
                 <p class="contact-name">M.Kraus</p>
@@ -604,7 +616,12 @@
                 Coming soon!
               </p>
             </div>
-            <div class="reference-item">
+            <div
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1200"
+              class="reference-item"
+            >
               <div class="reference-contact">
                 <img src="assets/imgs/format_quote.svg" alt="quote icon" />
                 <p class="contact-name">J.Meyer</p>
@@ -643,7 +660,7 @@
         </a>
       </div>
     </main>
-    <div class="contact-and-footer-container">
+    <div data-aos="fade-up" class="contact-and-footer-container">
       <div class="contact-and-footer-content">
         <section
           id="contact-section"
