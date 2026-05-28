@@ -68,9 +68,6 @@ function bindProjectItemToggle() {
   if (!projectItems.length) return;
   projectItems.forEach((item) => {
     addPressListener(item, (event) => {
-      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        return;
-      }
       if (event.target.closest("a")) return;
       item.classList.add("is-open");
     });
@@ -127,7 +124,7 @@ function setActiveLanguage(activeBtn, inactiveBtn) {
 function updateSendButtonState() {
   const sendMessageButton = document.getElementById("sendMessageButton");
   if (!sendMessageButton) return;
-  sendMessageButton.disabled = !privacyPolicyIsChecked;
+  sendMessageButton.classList.toggle("disabled", !privacyPolicyIsChecked);
 }
 
 /**
@@ -375,6 +372,11 @@ function checkMessage() {
   return valid;
 }
 
+function checkPrivacyPolicy() {
+  toggleError("privacyMessageError", !privacyPolicyIsChecked);
+  return privacyPolicyIsChecked;
+}
+
 /**
  * Validates the full form.
  *
@@ -384,7 +386,7 @@ function validateForm() {
   const nameValid = checkName();
   const emailValid = checkEmail();
   const messageValid = checkMessage();
-  const privacyValid = privacyPolicyIsChecked;
+  const privacyValid = checkPrivacyPolicy();
   return nameValid && emailValid && messageValid && privacyValid;
 }
 

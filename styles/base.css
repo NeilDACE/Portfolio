@@ -19,7 +19,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
   background-color: var(--primary-color);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -76,6 +80,7 @@ main {
   align-items: center;
   padding-left: 100px;
   padding-right: 100px;
+  flex: 1 0 auto;
 }
 
 @media (max-width: 1280px) {

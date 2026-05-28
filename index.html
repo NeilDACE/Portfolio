@@ -154,13 +154,15 @@
     <main>
       <div class="main-container">
         <section class="hero-section" id="hero-section">
-          <h1>
-            <span data-en="Frontend" data-de="Frontend">Frontend</span>
-            <span data-en="Developer" data-de="Entwickler">Developer</span>
-          </h1>
-          <div class="name-container">
-            <div class="divider"></div>
-            <p>Nil Vollhardt</p>
+          <div class="hero-top-container">
+            <h1>
+              <span data-en="Frontend" data-de="Frontend">Frontend</span>
+              <span data-en="Developer" data-de="Entwickler">Developer</span>
+            </h1>
+            <div class="name-container">
+              <div class="divider"></div>
+              <p>Nil Vollhardt</p>
+            </div>
           </div>
           <div class="hero-bottom-container">
             <a href="#contact-section">kontakt@nil-vollhardt.de</a>
@@ -659,13 +661,11 @@
                   >Your Name</label
                 >
                 <input
-                  type="text"
                   onblur="checkName()"
                   placeholder=" "
                   id="name"
                   autocomplete="name"
                   maxlength="150"
-                  required
                 />
                 <img
                   src="assets/imgs/not-accept-icon.svg"
@@ -686,13 +686,11 @@
                   >Your Email</label
                 >
                 <input
-                  type="email"
                   onblur="checkEmail()"
                   placeholder=" "
                   id="email"
                   autocomplete="email"
                   maxlength="254"
-                  required
                 />
                 <img
                   src="assets/imgs/not-accept-icon.svg"
@@ -717,12 +715,12 @@
                 >
                 <textarea
                   onblur="checkMessage()"
+                  oninput="checkMessage()"
                   placeholder=" "
                   id="message"
                   rows="5"
                   maxlength="500"
                   autocomplete="off"
-                  required
                 ></textarea>
                 <img
                   src="assets/imgs/not-accept-icon.svg"
@@ -765,21 +763,30 @@
                     >
                   </p>
                 </div>
+                <p>
+                  <span
+                    id="privacyMessageError"
+                    class="error-message"
+                    data-en="You must agree to the privacy policy to send a message."
+                    data-de="Du musst der Datenschutzerklärung zustimmen, um eine Nachricht zu senden."
+                    >You must agree to the privacy policy to send a
+                    message.</span
+                  >
+                </p>
                 <p
                   id="formMessage"
                   class="form-message"
-                  data-en="Please agree to the privacy policy"
-                  data-de="Bitte stimme der Datenschutzerklärung zu"
+                  data-en="Form Feedback Message"
+                  data-de="Formular Rückmeldungsnachricht"
                 >
-                  Please agree to the privacy policy
+                  Form Feedback Message
                 </p>
               </div>
               <div class="send-message-button-container">
                 <button
                   type="submit"
-                  class="primary-btn send-message-button"
+                  class="primary-btn send-message-button disabled"
                   id="sendMessageButton"
-                  disabled
                 >
                   <span
                     class="button-text"

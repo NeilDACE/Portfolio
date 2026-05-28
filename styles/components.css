@@ -147,14 +147,17 @@ button {
 }
 
 .hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100dvh;
   padding-top: 112px;
 }
 
 .hero-bottom-container {
-  padding-top: 80px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 112px;
 }
 
 .hero-bottom-container p {
@@ -434,10 +437,6 @@ body::after {
   .name-container {
     padding-top: 8px;
     gap: 4px;
-  }
-
-  .hero-bottom-container {
-    padding-top: 150px;
   }
 
   .hero-bottom-container a {
