@@ -60,7 +60,22 @@ a {
   color: var(--secondary-color);
 }
 
+h1 {
+  color: var(--secondary-color);
+  padding-bottom: 16px;
+}
+
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 64px;
+  }
+}
+
 @media (max-width: 800px) {
+  h1 {
+    font-size: 48px;
+  }
+
   .main-container {
     padding-left: 0;
     padding-right: 0;
@@ -69,7 +84,7 @@ a {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 48px;
-    padding-bottom: 32px;
+    font-size: 28px;
+    padding-bottom: 0;
   }
 }
