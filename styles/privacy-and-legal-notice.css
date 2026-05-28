@@ -67,7 +67,7 @@ h1 {
 
 @media (max-width: 1280px) {
   h1 {
-    font-size: 64px;
+    font-size: 54px;
   }
 }
 
@@ -84,7 +84,7 @@ h1 {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 28px;
+    font-size: 26px;
     padding-bottom: 0;
   }
 }
