@@ -60,7 +60,7 @@
 .error-message {
   font-family: var(--font-family-overpass);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 120%;
   color: var(--quaternary-color);
   padding-top: 8px;
@@ -76,7 +76,7 @@
 .agree-container p {
   font-family: var(--font-family-overpass);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--primary-color);
 }
 
